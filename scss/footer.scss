@@ -2,15 +2,25 @@
 
 /*FOOTER*/
 footer {
-	background:#222;
-	color: #ddd;
+	background:$font_color;
+	color: transparentize(white, 0.3);
 	padding:20px 0;
-	margin:20px 0 0;
+	margin:0px 0 0;
+	position:relative;
+	z-index: 10;
+
 }
 
 footer p {
-	padding:0
+	padding:0;
+	margin:0;
+		font-size: ($font_size * 0.8);
 }
 footer a {
 	color: white;
+
+	&:link, &:visited, &:active {
+		color: white;
+		border-bottom: 1px solid white;
+	}
 }

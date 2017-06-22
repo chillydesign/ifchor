@@ -1,10 +1,10 @@
 
 /*TYPOGRAPHY*/
 h1,h2,h3,h4,h5 {
-	font-family: $serif_font_stack;
+//	font-family: $serif_font_stack;
 }
 
-h1 {font-size: 3.9em; padding:50px 0 50px;font-weight: normal;}
+h1 {font-size: 3.9em; padding:50px 0 50px;font-weight: bold;}
 h2 {font-size: 2.9em; padding: 0 0 20px;font-weight: bold}
 h3 {font-size: 2.21em;padding:0 0 20px;}
 h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: uppercase}
@@ -20,16 +20,24 @@ h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: upperca
 
 
 p {
-	font-size: 1.5em;
+	font-size: $font_size;
 	padding:0 0 30px;
 	line-height: 160%;
 }
-li { font-size: 1.5em;
+li { font-size: $font_size;
 	padding:0 0 5px;
 	line-height: 160%
 }
 
-section p, section li {font-size:2em;}
+ul {
+	list-style: disc;
+	margin:0 30px 10px 30px;
+	padding:0 20px 0 20px;
+}
+ol {
+	@extend ul;
+	list-style: decimal;
+}
 
 
 li li, li p {font-size: inherit;}
@@ -45,7 +53,7 @@ ul ul , ul ol, ol ol {font-size: inherit}
 
 a {
 	text-decoration: none;
-
+	border-bottom:1px solid $primary_color;
 	display: inline-block;
 	transition: all 0.3s;
 

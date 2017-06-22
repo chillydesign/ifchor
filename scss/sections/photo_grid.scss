@@ -1,0 +1,92 @@
+.photo_grid_item {
+
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s;
+  overflow: hidden;
+
+   a {
+     border:0;
+     color: inherit;
+     display: block;
+   }
+
+  .photo_slide_content {
+    padding:0 30px;
+  }
+
+  h4 {
+    font-size: 3em;
+    font-weight: bold;
+    display: inline-block;
+    transform: translateY(30px);
+    transition: all 0.7s;
+
+        &:after {
+          content:'';
+          width: 0%;
+          position: absolute;
+          bottom: 5px;
+          left: 50%;
+          right: 50%;
+          border-bottom: 2px solid  transparentize(white, 0.5);
+          transition: all 0.3s
+        }
+  }
+
+  p {
+    opacity: 0;
+    transition: all 0.7s;
+    transform: translateY(10px);
+  }
+
+  .photo_slide {
+    transition: all 0.7s;
+
+  }
+
+  .photo_overlay {
+    opacity: 0.2;
+      @extend .photo_gradient;
+    transition: all 0.7s;
+    background-color: $primary_color;
+
+  }
+
+
+  &:hover {
+    h4 {
+      transform: translateY(0);
+
+
+      &:after {
+        left:0;
+        right: 0;
+        width: 100%;
+      }
+
+
+    }
+    p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo_slide {
+      transform: scale(1.2);
+    }
+
+    .photo_overlay {
+      opacity: 0.9;
+    }
+
+  }
+
+
+
+}
+
+// CHECK PHOTO_SLIDE.SCSS FOR MORE GENERAL RULES

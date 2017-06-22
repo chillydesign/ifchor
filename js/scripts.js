@@ -1,3 +1,5 @@
+  import countto from './jquery.countto.js';
+
 (function ($, root, undefined) {
 
 	$(function () {
@@ -11,6 +13,15 @@
 				var $navigation_menu = $('#navigation_menu');
 				var $menu_button = $('#menu_button');
 				var $parallax = $('.parallax');
+				var $statistic_amounts = $('.statistic_amount');
+
+
+				var has_stats_animated = false;
+				var stats_animated  = $('.statistic_amount').countTo({
+					speed: 3000,
+					refreshInterval: 40
+				});
+				stats_animated.countTo('stop');
 
 
 				$menu_button.on('click', function(){
@@ -30,8 +41,16 @@
 						var windowScroll = $window.scrollTop();
 
 						var translateY = windowScroll * 0.2;
-						console.log(translateY);
-						$parallax.css({'transform': 'translateY(' + translateY + 'px)'  })
+						$parallax.css({'transform': 'translateY(' + translateY + 'px)'  });
+
+
+						if (!has_stats_animated){
+							if ( windowScroll  > ($statistic_amounts.first().offset().top - $windowHeight) ) {
+									stats_animated.countTo('start');
+									has_stats_animated = true;
+									console.log('start animating');
+							}
+						}
 
 
 
@@ -40,7 +59,9 @@
 
 
 
-
+						function animateStatisticAmounts(){
+							console.log('asdf');
+						}
 
 
 

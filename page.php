@@ -4,9 +4,7 @@
 
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 			<?php include('section-loop.php'); ?>
-
 		</article>
 		<!-- /article -->
 

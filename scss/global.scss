@@ -28,7 +28,9 @@ body {
 }
 
 
-
+article {
+	margin:0 0 -50px;
+}
 
 
 section {
@@ -37,4 +39,8 @@ section {
 	width: 100%;
 }
 
+@import 'sections/page_title';
 @import 'sections/photo_slide';
+@import 'sections/photo_grid';
+@import 'sections/statistics';
+@import 'sections/services';

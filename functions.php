@@ -116,8 +116,6 @@ function webfactor_conditional_scripts()
 // Load HTML5 Blank styles
 function webfactor_styles()
 {
-    wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), wf_version(), 'all');
-    wp_enqueue_style('reset'); // Enqueue it!
 
     wp_register_style('wf_style', get_template_directory_uri() . '/css/global.css', array(), wf_version(),  'all');
     wp_enqueue_style('wf_style'); // Enqueue it!
@@ -539,7 +537,7 @@ add_action( 'after_setup_theme', 'remove_json_api' );
 function count_to_bootstrap_class($count){
 
     if ($count == 1) {
-        $class = 'col-sm-12';
+        $class = 'col-sm-10 col-sm-push-1 col-md-8 col-md-push-2';
     } elseif ($count == 2) {
         $class = 'col-sm-6';
     } elseif ($count == 3) {
