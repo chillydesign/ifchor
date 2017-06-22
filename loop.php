@@ -3,29 +3,32 @@
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+		<div class="row single_post">
+			<div class="col-sm-9">
+				<h2>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				</h2>
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+				<p class="meta"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></p>
 
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'webfactor' ), __( '1 Comment', 'webfactor' ), __( '% Comments', 'webfactor' )); ?></span>
-		<!-- /post details -->
+				<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+				<?php edit_post_link(); ?>
 
-		<?php edit_post_link(); ?>
+			</div>
+			<div class="col-sm-3">
+				<!-- post thumbnail -->
+				<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+					<?php $image = thumbnail_of_post_url(get_the_ID(), 'small'); ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="image_from_background"  style="background-image: url(<?php echo $image; ?>);"></a>
+				<?php endif; ?>
+				<!-- /post thumbnail -->
+
+			</div>
+		</div>
+
+
+
 
 	</article>
 	<!-- /article -->
@@ -35,7 +38,7 @@
 <?php else: ?>
 
 	<!-- article -->
-	<article>
+	<article class="">
 		<h2><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h2>
 	</article>
 	<!-- /article -->

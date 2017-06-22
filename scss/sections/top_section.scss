@@ -1,0 +1,13 @@
+#top_section {
+  background:$primary_color;
+    @include linear-gradient(  transparentize($primary_color,0.6),   transparentize($primary_color,0)   );
+  color: white;
+  text-align: center;
+
+  a {
+    color: white;
+    &:link,&:active,&:visited {
+      border-bottom: 1px solid white;
+    }
+  }
+}

@@ -13,15 +13,17 @@
 				var $navigation_menu = $('#navigation_menu');
 				var $menu_button = $('#menu_button');
 				var $parallax = $('.parallax');
-				var $statistic_amounts = $('.statistic_amount');
 
+        var $statistic_amounts = $('.statistic_amount');
+				var need_to_animate_statistics =  ($statistic_amounts.length > 0)  ;
+        if (need_to_animate_statistics) {
+          var stats_animated  = $statistic_amounts.countTo({
+            speed: 3000,
+            refreshInterval: 40
+          });
+          stats_animated.countTo('stop');
+        }
 
-				var has_stats_animated = false;
-				var stats_animated  = $('.statistic_amount').countTo({
-					speed: 3000,
-					refreshInterval: 40
-				});
-				stats_animated.countTo('stop');
 
 
 				$menu_button.on('click', function(){
@@ -44,11 +46,10 @@
 						$parallax.css({'transform': 'translateY(' + translateY + 'px)'  });
 
 
-						if (!has_stats_animated){
+						if (need_to_animate_statistics){
 							if ( windowScroll  > ($statistic_amounts.first().offset().top - $windowHeight) ) {
 									stats_animated.countTo('start');
-									has_stats_animated = true;
-									console.log('start animating');
+									need_to_animate_statistics = false;
 							}
 						}
 

@@ -27,10 +27,15 @@ body {
 	height:300px;
 }
 
-
-article {
-	margin:0 0 -50px;
+.single_post {
+	margin:0 0 40px;
+	a.image_from_background {
+		display: inline-block;
+		height: 180px;
+	}
 }
+
+
 
 
 section {
@@ -39,6 +44,7 @@ section {
 	width: 100%;
 }
 
+@import 'sections/top_section';
 @import 'sections/page_title';
 @import 'sections/photo_slide';
 @import 'sections/photo_grid';

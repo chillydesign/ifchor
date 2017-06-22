@@ -3,7 +3,7 @@
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article>
 			<?php include('section-loop.php'); ?>
 		</article>
 		<!-- /article -->
@@ -21,7 +21,6 @@
 	<!-- /article -->
 
 <?php endif; ?>
-
 
 
 
