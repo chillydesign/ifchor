@@ -1,0 +1,28 @@
+.section_photo_slide {
+
+  height: 550px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  .photo_slide_content {
+    flex: 1;
+  }
+
+
+
+  .parallax {
+      @extend .image_from_background;
+      position: absolute;
+      top:0;
+      bottom:0;
+      height: 100%;
+      min-height: 100%;
+      z-index: -1;
+
+  }
+
+
+}
