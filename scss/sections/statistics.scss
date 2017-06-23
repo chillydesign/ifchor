@@ -16,8 +16,12 @@
     flex:1;
     text-align: center;
     font-size: 1em;
-    margin:0 0 40px;
+    margin:0 0 70px;
     padding: 0;
+
+    &:last-child {
+        margin:0;  
+    }
 
     .statistic_amount {
       font-size: 6.5em;
