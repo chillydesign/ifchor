@@ -11,15 +11,20 @@
 
     }
     &.photo_slide_size_medium {
-        height: 410px;
+        height: 380px;
     }
     &.photo_slide_size_large {
-        height: 620px;
+        height: 520px;
     }
   }
 
   .photo_slide {
     filter: grayscale(60%);
+  }
+
+  a {
+    @extend .button;
+    margin-top: 30px;
   }
 
 }
@@ -32,6 +37,19 @@
   z-index: 2;
     color: white;
       text-align: center;
+
+      h1 {
+        padding:50px 0 0;
+        margin-bottom: -10px;
+      }
+      p {
+        text-transform: uppercase;
+        padding:0;
+        opacity: 0.8
+      }
+
+
+
 }
 
   .photo_slide {

@@ -18,6 +18,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+<?php $supermenu = get_supermenu(); ?>
 
 			<header class="header" id="header">
 				<div class="container">
@@ -30,7 +31,8 @@
 						<div class="col-sm-9">
 							<nav id="navigation_menu" role="navigation">
 								 <ul>
-									 <?php chilly_nav('primary-navigation'); ?>
+									 <?php // chilly_nav('primary-navigation'); ?>
+									 	<?php echo $supermenu->top_level_links; ?>
 									 <li id="search_li">
 										 <a href="#" id="search_opener"></a>
 										 	<form>
@@ -46,39 +48,11 @@
 				</div>
 
 
-<div id="supermenu">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-3">
-				<h4>Dry Bulk</h4>
-				<ul>
-					<li><a href="#">Menu Item Here</a></li>
-					<li><a href="#">Menu Item Here</a></li>
-					<li><a href="#">Menu Item Here</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3">
-				<h4>S&amp;P</h4>
-				<ul>
-					<li><a href="#">Menu Item Here</a></li>
-					<li><a href="#">Menu Item Here</a></li>
-					<li><a href="#">Menu Item Here</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3">
-				<h4>Research</h4>
-				<ul>
-					<li><a href="#">Menu Item Here</a></li>
-					<li><a href="#">Menu Item Here</a></li>
-					<li><a href="#">Menu Item Here</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3">
-				<div  class="supermenu_image image_from_background" title="An Image" style="background-image:url('https://www.shippinginternational.com/images/india.jpg');"></div>
-			</div>
-		</div>
-	</div>
-</div>
+
+				<div id="supermenus">
+					 	<?php echo $supermenu->supermenus; ?>
+					 <div class="supermenu_background"></div>
+				</div>
 
 
 

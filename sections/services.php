@@ -7,17 +7,18 @@
 
     <?php while ( have_rows('service') ) : the_row(); ?>
       <div class="service_container <?php echo $item_class ; ?>">
-
+          <div class="service_inner">
         <?php $link = false; if(get_sub_field('link')) : ?>
           <?php $link = get_sub_field('link'); ?>
             <a href="<?php echo $link; ?>">
         <?php endif; ?>
 
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logo_black.svg" alt=""/>
+
+
 
         <?php if(get_sub_field('icon')) : ?>
           <?php $icon =  get_sub_field('icon'); ?>
-          <!-- <img src="<?php echo $icon['url']; ?>" alt=""/> -->
+        <img src="<?php echo $icon['url']; ?>" alt=""/> 
         <?php endif ?>
         <?php if(get_sub_field('title')) : ?>
           <h4><?php echo get_sub_field('title'); ?></h4>
@@ -30,6 +31,7 @@
         <?php if ($link): ?>
         </a>
         <?php endif; ?>
+      </div>
       </div>
 
 

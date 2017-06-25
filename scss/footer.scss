@@ -2,25 +2,39 @@
 
 /*FOOTER*/
 footer {
-	background:$font_color;
+	background:$font_color  ;
 	color: transparentize(white, 0.3);
-	padding:20px 0;
+	padding:80px 0;
 	margin:0px 0 0;
 	position:relative;
 	z-index: 10;
 
-}
+	.footer_background {
+			background:    url('../img/logo_black.svg') no-repeat right 40%;
+			background-size: 400px;
+			position: absolute;
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: 0.2;
+			width: 100%;
 
-footer p {
-	padding:0;
-	margin:0;
+	}
+
+
+	p {
+		padding:0;
+		margin:0;
 		font-size: ($font_size * 0.8);
-}
-footer a {
-	color: white;
+	}
 
-	&:link, &:visited, &:active {
+	a {
 		color: white;
-		border-bottom: 1px solid white;
+
+		&:link, &:visited, &:active {
+			color: white;
+			border-bottom: 1px solid white;
+		}
 	}
 }

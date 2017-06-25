@@ -4,7 +4,7 @@
 				<p class="container">
 					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a>
 				</p>
-
+				<div class="footer_background"></div>
 			</footer>
 			<!-- /footer -->
 

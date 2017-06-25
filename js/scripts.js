@@ -12,7 +12,8 @@
 				var $windowHeight = $window.height();
 				var $navigation_menu = $('#navigation_menu');
 				var $menu_button = $('#menu_button');
-				var $supermenu = $('#supermenu');
+				var $supermenu = $('.supermenu');
+				var $top_level_links = $('.top_level_link');
 				var $parallax = $('.parallax');
 
         // ANIMATE STATISTICS
@@ -31,11 +32,19 @@
 					$navigation_menu.toggleClass('menu_visible');
 				});
 
-        $('a', $navigation_menu).on('mouseover', function(){
-              $supermenu.addClass('supermenu_visible');
+        $top_level_links.on('mouseover', function(){
+            var $this = $(this);
+            var the_supermenu  = $this.data('supermenu');
+
+            $top_level_links.removeClass('hovered');
+            $supermenu.removeClass('supermenu_visible');
+            $('#' + the_supermenu).addClass('supermenu_visible')
+            $this.addClass('hovered');
+          //    $supermenu.addClass('supermenu_visible');
         });
         $( $supermenu).on('mouseleave', function(){
             $supermenu.removeClass('supermenu_visible');
+            $top_level_links.removeClass('hovered');
         });
 
 

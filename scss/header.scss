@@ -24,6 +24,11 @@ header {
     display: block;
   }
 
+  input {
+    width: 100%;
+    font-size: 0.9em;
+  }
+
   a {
     padding:15px;
     display: block;
@@ -31,7 +36,7 @@ header {
     border:0;
     color: white;
 
-    &:hover {
+    &:hover, &.hovered {
       background-color: transparentize($font_color, 0.1);
     }
 
@@ -67,7 +72,7 @@ header {
       margin-top: 10px;
       background: url('../img/logo.svg') no-repeat left center;
       background-size: contain;
-      z-index: 100;
+      z-index: 600;
       position: relative;
 
       span {
@@ -90,27 +95,50 @@ header {
   }
 
 
+  #supermenus {
 
-  #supermenu {
-    background: transparentize($font_color,0.05);
-    color: white;
-    padding-top: 40px;
-    padding-bottom: 30px;
+    background: transparentize($font_color,0.0);
+
     position: absolute;
-    z-index: 1000;
+    z-index: 500;
     top:58px;
     left: 0;
     width: 100%;
-    display: none;
+    color: white;
+
+
+
+    .supermenu_background {
+       background: url('../img/logo_black.svg') no-repeat center center;
+       background-size: 600px;
+       opacity: 0.2;
+       top:0;
+       bottom:0;
+       right:0;
+       left:0;
+       position: absolute;
+       z-index: -1
+    }
+
+
+  }
+
+  .supermenu {
+    display:none;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    min-height: 200px;
 
     &.supermenu_visible {
       display: block;
-      animation: fadeIn 0.3s forwards;
+      animation: fadeIn 0.8s forwards;
     }
 
     .supermenu_image {
       height: 180px;
     }
+
+
 
     ul {
       margin:0;
@@ -264,7 +292,7 @@ header {
     }
   }
 
-  #supermenu {
+  .supermenu {
     ul {
       li {
         a {
