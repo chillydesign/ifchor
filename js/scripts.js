@@ -38,8 +38,10 @@
 
             $top_level_links.removeClass('hovered');
             $supermenu.removeClass('supermenu_visible');
-            $('#' + the_supermenu).addClass('supermenu_visible')
+            var $new_supermenu =   $('#' + the_supermenu).addClass('supermenu_visible');
+
             $this.addClass('hovered');
+            $('input', $new_supermenu).focus();
           //    $supermenu.addClass('supermenu_visible');
         });
         $( $supermenu).on('mouseleave', function(){

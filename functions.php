@@ -418,6 +418,7 @@ function create_post_type_supermenu()
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
+        'exclude_from_search' => true, 
         'supports' => array(
             'title'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
@@ -571,13 +572,15 @@ function get_supermenu(){
 
   $supermenus = get_posts(  array('post_type' => 'supermenu', 'posts_per_page' => 1  ) );
 
+  $top_level_links_array = [];
+  $supermenus_array = [];
+
   if (sizeof( $supermenus ) > 0 )  :
     $supermenu = $supermenus[0];
     $supermenu_id = $supermenu->ID;
     $top_levels = get_field('top_level_link',  $supermenu_id );
 
-    $top_level_links_array = [];
-    $supermenus = [];
+
 
     while ( have_rows('top_level_link', $supermenu_id) ) : the_row();
       $image = get_sub_field('image'  );
@@ -610,7 +613,7 @@ function get_supermenu(){
 
       </div>';
 
-    array_push($supermenus, $supermenu);
+    array_push($supermenus_array, $supermenu);
 
 
 
@@ -620,7 +623,7 @@ function get_supermenu(){
 
   $return = new stdClass();
   $return->top_level_links = implode($top_level_links_array, '');
-  $return->supermenus = implode($supermenus, '');
+  $return->supermenus = implode($supermenus_array, '');
   return $return;
 
 

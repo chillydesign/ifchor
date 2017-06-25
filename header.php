@@ -33,12 +33,14 @@
 								 <ul>
 									 <?php // chilly_nav('primary-navigation'); ?>
 									 	<?php echo $supermenu->top_level_links; ?>
+
 									 <li id="search_li">
-										 <a href="#" id="search_opener"></a>
+										 <a data-supermenu="supermenu_searchform" class="top_level_link" href="#" id="search_opener">&nbsp;</a>
 										 	<form>
 												<input type="text" name="s" placeholder="serach this site" />
 											</form>
 									 </li>
+									 
 								 </ul>
 							</nav>
 						</div>
@@ -51,6 +53,16 @@
 
 				<div id="supermenus">
 					 	<?php echo $supermenu->supermenus; ?>
+
+						<div class="supermenu" id="supermenu_searchform" >
+			        <div class="container">
+								<h2>Search</h2>
+								<form>
+								 <input type="text" name="s" placeholder="search this site" />
+							 </form>
+							</div>
+						</div>
+
 					 <div class="supermenu_background"></div>
 				</div>
 
