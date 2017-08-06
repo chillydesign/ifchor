@@ -103,3 +103,7 @@ blockquote {
 blockquote p:last-child {padding-bottom: 0}
 
 input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;}
+
+img {
+	max-width: 100%;
+}
