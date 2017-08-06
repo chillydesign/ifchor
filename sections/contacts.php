@@ -1,3 +1,4 @@
+<div class="container">
 <ul class="people">
 
 
@@ -17,3 +18,4 @@
         </li>
         <?php };   ?>
     </ul>
+</div>
