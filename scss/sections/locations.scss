@@ -1,0 +1,26 @@
+svg {
+  width: 100%;
+  height: auto;
+}
+
+circle {
+   animation: scaleinout 1.5s ease-in-out infinite alternate;
+   transform-origin: 50% 50%;
+   cursor: pointer;
+
+}
+
+circle.active_circle {
+  fill : #17296B;
+}
+
+@keyframes scaleinout {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
