@@ -1,5 +1,7 @@
 $picture_width: 80px;
 
+
+
 ul.people {
     margin: 0 0 30px;
     padding: 0;
@@ -37,6 +39,15 @@ ul.people {
     }
 
 
+}
+
+
+// FOR THE CITY NAME, AND FLAG
+ul.city {
+    font-size: 140%;
+    li.person {
+        width: 100%;
+    }
 }
 
 
