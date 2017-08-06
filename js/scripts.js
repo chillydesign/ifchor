@@ -23,6 +23,7 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
             dots: true,
             infinite: true,
             centerMode: true,
+              autoplay: true,
             slidesToScroll: 3,
             slidesToShow: 5,
             responsive: [{
