@@ -3,10 +3,38 @@
 <?php $i = 1; ?>
 
 <div class="container">
-  <div class="row">
+
+  <div class="slick_slider">
 
     <?php while ( have_rows('service') ) : the_row(); ?>
-      <div class="service_container <?php echo $item_class ; ?>">
+        <div class="service_container ">
+            <div class="service_inner">
+          <?php $link = false; if(get_sub_field('link')) : ?>
+            <?php $link = get_sub_field('link'); ?>
+              <a href="<?php echo $link; ?>">
+          <?php endif; ?>
+
+
+
+
+          <?php if(get_sub_field('icon')) : ?>
+            <?php $icon =  get_sub_field('icon'); ?>
+          <img src="<?php echo $icon['url']; ?>" alt=""/>
+          <?php endif ?>
+          <?php if(get_sub_field('title')) : ?>
+            <h4><?php echo get_sub_field('title'); ?></h4>
+          <?php endif ?>
+
+          <?php if(get_sub_field('content')) : ?>
+            <!-- <p><?php echo get_sub_field('content'); ?></p> -->
+          <?php endif ?>
+
+          <?php if ($link): ?>
+          </a>
+          <?php endif; ?>
+        </div>
+        </div>
+      <div class="service_container ">
           <div class="service_inner">
         <?php $link = false; if(get_sub_field('link')) : ?>
           <?php $link = get_sub_field('link'); ?>
@@ -18,14 +46,14 @@
 
         <?php if(get_sub_field('icon')) : ?>
           <?php $icon =  get_sub_field('icon'); ?>
-        <img src="<?php echo $icon['url']; ?>" alt=""/> 
+        <img src="<?php echo $icon['url']; ?>" alt=""/>
         <?php endif ?>
         <?php if(get_sub_field('title')) : ?>
           <h4><?php echo get_sub_field('title'); ?></h4>
         <?php endif ?>
 
         <?php if(get_sub_field('content')) : ?>
-          <p><?php echo get_sub_field('content'); ?></p>
+          <!-- <p><?php echo get_sub_field('content'); ?></p> -->
         <?php endif ?>
 
         <?php if ($link): ?>

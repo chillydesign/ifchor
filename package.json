@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/chillydesign/blanktheme#readme",
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

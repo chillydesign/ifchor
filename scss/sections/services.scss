@@ -1,70 +1,171 @@
 .section_services {
 
-  text-align: center;
-  position: relative;
-  margin-top: 30px;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
 
-  .service_container {
+    .service_container {
 
-    box-shadow: 0 0 30px transparentize($font_color, 0.5);
-    background-color:$primary_color;
+        box-shadow: 0 0 30px transparentize($font_color, 0.5);
+        background-color:$primary_color;
 
-    .service_inner {
-      padding:30px;
-      min-height: 380px;
-      color: white;
-    }
-
-    a {
-      color: inherit;
-      border: 0;
-      transition: all 0.3s;
-      &:hover {
-        transform: scale(1.05);
-        img {
-          transform: scale(1.15);
+        .service_inner {
+            padding:30px;
+            min-height: 380px;
+            color: white;
         }
-      }
-    }
-    img {
-      margin:10px 30% 30px;
-      transition: all 0.3s;
-      width:40%;
-    }
-    h4 {
-      font-size: 2em;
-    }
-    p {
+
+        a {
+            color: inherit;
+            border: 0;
+            transition: all 0.3s;
+            display: block;
+            &:hover {
+                transform: scale(1.05);
+                img {
+                    transform: scale(1.15);
+                }
+            }
+        }
+        img {
+            margin:10px 30% 30px;
+            transition: all 0.3s;
+            width:40%;
+        }
+        h4 {
+            font-size: 2em;
+        }
+        p {
+
+        }
+
+
+        &:nth-child(1) {
+            background-color: lighten(desaturate($primary_color,40),15);
+        }
+
+        &:nth-child(2) {
+            background-color: desaturate($primary_color,50);
+        }
+
+        &:nth-child(3) {
+            background-color: lighten(desaturate($primary_color,40),15);
+        }
+
+        &:nth-child(4) {
+            background-color: darken($primary_color,50);
+        }
+
+        &:nth-child(5) {
+            background-color: saturate($primary_color,50);
+        }
 
     }
-
-
-    &:nth-child(1) {
-      background-color: lighten(desaturate($primary_color,40),15);
-    }
-
-    &:nth-child(3) {
-      background-color: desaturate($primary_color,50);
-    }
-
-
-
-
-
-  }
 
 }
 
 
-@media (min-width:768px){
-  .section_services {
-    .service_container {
-      &:nth-child(2){
-        transform:scale(1.13);
-        z-index: 3;
 
-      }
+
+
+@media (min-width:768px){
+
+
+    .service_container {
+
+        transition: all 0.3s;
+        position: relative;
+        //
     }
-  }
+
+
+
+
+    .slick-dotted .service_container {
+        opacity: 0;
+    }
+    .slick-dotted .slick-slide.slick-active.service_container {
+        opacity: 1;
+    }
+
+
+        .slick-active.service_container {
+            // outline:1px solid blue;
+            left: -30px;
+            right: auto;
+            z-index: 10;
+            transform:scale(0.75);
+
+        }
+
+
+
+        .slick-active + .slick-active.service_container {
+
+            // outline:1px solid green;
+            left:auto;
+            right: auto;
+            z-index: 20;
+            transform:scale(1);
+        }
+        .slick-active + .slick-active + .slick-active.service_container {
+
+            // outline:1px solid yellow;
+            left: auto;
+            right: -30px;
+            z-index: 10;
+            transform:scale(0.75);
+        }
+
+
+}
+
+@media (min-width:992px){
+
+
+
+    .slick-active.service_container {
+        // outline:1px solid blue;
+        left: 80px;
+        right: auto;
+        z-index: 10;
+        transform:scale(0.75);
+
+    }
+
+
+
+    .slick-active + .slick-active.service_container {
+
+        // outline:1px solid green;
+        left: 25px;
+        right: auto;
+        z-index: 20;
+        transform:scale(0.9);
+    }
+    .slick-active + .slick-active + .slick-active.service_container {
+
+        // outline:1px solid yellow;
+        left: auto;
+        right: auto;
+        z-index: 30;
+        transform:scale(1);
+    }
+    .slick-active + .slick-active + .slick-active +.slick-active.service_container {
+
+        // outline:1px solid orange;
+        left:auto;
+        right: 25px;
+        z-index: 20;
+        transform:scale(0.9);
+    }
+    .slick-active + .slick-active + .slick-active +.slick-active +.slick-active.service_container {
+        // outline:1px solid purple;
+        right:80px;
+        left: auto;
+        z-index: 10;
+        transform:scale(0.75);
+    }
+
 
 }
