@@ -1,4 +1,4 @@
 
 <div class="container">
-	<h1><?php echo get_sub_field('page_title_content'); ?></h1>
+	<h2><?php echo get_sub_field('content'); ?></h2>
 </div>

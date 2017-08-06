@@ -70,6 +70,7 @@ overflow: hidden;
     position: absolute;
     min-width: 100%;
     min-height: 100%;
+    filter:grayscale(80%);
   }
 
 
@@ -81,5 +82,5 @@ overflow: hidden;
   width: 100%;
   min-height: 100%;
   z-index: 1;
-  @include linear-gradient(  transparentize($primary_color,1),   transparentize($primary_color,0.6)   );
+  @include linear-gradient(  transparentize($primary_color,1),   transparentize($primary_color,0.3)   );
 }
