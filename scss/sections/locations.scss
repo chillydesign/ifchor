@@ -3,16 +3,16 @@ svg {
   height: auto;
 }
 
-circle {
-   animation: scaleinout 1.5s ease-in-out infinite alternate;
-   transform-origin: 50% 50%;
-   cursor: pointer;
-
-}
-
-circle.active_circle {
-  fill : #17296B;
-}
+// circle {
+//    animation: scaleinout 1.5s ease-in-out infinite alternate;
+//    transform-origin: 50% 50%;
+//    cursor: pointer;
+//
+// }
+//
+// circle.active_circle {
+//   fill : #17296B;
+// }
 
 @keyframes scaleinout {
     0% {

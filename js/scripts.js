@@ -1,6 +1,7 @@
 import countto from './jquery.countto.js';
 import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
+
 (function ($, root, undefined) {
 
     $(function () {
@@ -18,6 +19,10 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
         var $parallax = $('.parallax');
 
 
+
+        $('.service_container').each(function(){
+            $(this)
+        });
 
         $(".slick_slider").slick({
             dots: true,
