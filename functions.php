@@ -455,7 +455,8 @@ function create_post_type_person()
         'has_archive' => true,
         'exclude_from_search' => true,
         'supports' => array(
-            'title'
+            'title',
+            'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'taxonomies' => array(

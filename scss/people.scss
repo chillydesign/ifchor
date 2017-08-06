@@ -1,0 +1,57 @@
+$picture_width: 80px;
+
+ul.people {
+    margin: 0 0 30px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li.person {
+        margin: 0 0 20px;
+        padding: 0 0 20px;
+        display: flex;
+        font-size: 1em;
+
+
+        .profile_picture {
+
+            width:  #{$picture_width + 30px};
+
+            .image_from_background {
+                height: $picture_width;
+                width:  $picture_width;
+                border-radius: 50%;
+            }
+        }
+        .profile_details {
+            h2 {
+                font-size: 1.9em;
+                margin: 0;
+                padding: 0 0 5px;
+            }
+            p {
+                font-size: 1.4em;
+            }
+
+        }
+    }
+
+
+}
+
+
+@media (min-width:768px){
+
+    li.person {
+        min-width:  50%;
+    }
+
+}
+
+@media (min-width:992px){
+
+    li.person {
+        min-width:  33%;
+    }
+
+}
