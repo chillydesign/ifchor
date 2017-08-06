@@ -404,21 +404,21 @@ function create_post_type_supermenu()
         'labels' => array(
             'name' => __('Supermenu', 'webfactor'), // Rename these to suit
             'singular_name' => __('Supermenu', 'webfactor'),
-            'add_new' => __('Add New', 'webfactor'),
-            'add_new_item' => __('Add New Supermenu', 'webfactor'),
+            'add_new' => __('Add new', 'webfactor'),
+            'add_new_item' => __('Add new supermenu', 'webfactor'),
             'edit' => __('Edit', 'webfactor'),
-            'edit_item' => __('Edit Supermenu', 'webfactor'),
-            'new_item' => __('New Supermenu', 'webfactor'),
-            'view' => __('View Supermenu', 'webfactor'),
-            'view_item' => __('View Supermenu', 'webfactor'),
-            'search_items' => __('Search Supermenu', 'webfactor'),
-            'not_found' => __('No Supermenus found', 'webfactor'),
-            'not_found_in_trash' => __('No Supermenus found in Trash', 'webfactor')
+            'edit_item' => __('Edit supermenu', 'webfactor'),
+            'new_item' => __('New supermenu', 'webfactor'),
+            'view' => __('View supermenu', 'webfactor'),
+            'view_item' => __('View supermenu', 'webfactor'),
+            'search_items' => __('Search supermenu', 'webfactor'),
+            'not_found' => __('No supermenus found', 'webfactor'),
+            'not_found_in_trash' => __('No supermenus found in Trash', 'webfactor')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
-        'exclude_from_search' => true, 
+        'exclude_from_search' => true,
         'supports' => array(
             'title'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
@@ -428,6 +428,45 @@ function create_post_type_supermenu()
         ) // Add Category and Post Tags support
     ));
 }
+
+
+add_action('init', 'create_post_type_person'); // Add our person Type
+function create_post_type_person()
+{
+
+    register_post_type('person', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('People', 'webfactor'), // Rename these to suit
+            'singular_name' => __('Person', 'webfactor'),
+            'add_new' => __('Add New', 'webfactor'),
+            'add_new_item' => __('Add new person', 'webfactor'),
+            'edit' => __('Edit', 'webfactor'),
+            'edit_item' => __('Edit person', 'webfactor'),
+            'new_item' => __('New person', 'webfactor'),
+            'view' => __('View person', 'webfactor'),
+            'view_item' => __('View person', 'webfactor'),
+            'search_items' => __('Search people', 'webfactor'),
+            'not_found' => __('No people found', 'webfactor'),
+            'not_found_in_trash' => __('No people found in Trash', 'webfactor')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'exclude_from_search' => true,
+        'supports' => array(
+            'title'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+
+        ) // Add Category and Post Tags support
+    ));
+}
+
+
+
+
 
 /*------------------------------------*\
 	ShortCode Functions
