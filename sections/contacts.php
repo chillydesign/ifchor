@@ -1,7 +1,7 @@
 <div class="container">
 		<?php $tdu = get_template_directory_uri(); ?>
 
-
+<br><br>
     <ul class="people city">
         <li class="person">
             <div class="profile_picture">

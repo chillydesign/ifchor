@@ -12,7 +12,7 @@
 
 
 		<div class="<?php echo $classes[1]; ?>">
-		<div class="one_third_image"><img src="<?php echo $image['url']; ?>"  alt="" /></div>
+		<div class="one_third_image"><img src="<?php echo $image['url']; ?>"  alt="" />  <figcaption><?php echo $image['caption']; ?></figcaption></div>
 		</div>
 
 	</div> <!-- END OF ROW -->

@@ -624,10 +624,10 @@ function get_supermenu(){
 
     while ( have_rows('top_level_link', $supermenu_id) ) : the_row();
       $image = get_sub_field('image'  );
-      $link = get_sub_field('link'  );
+      // $link = get_sub_field('link'  );
       $link_text = get_sub_field('link_text'  );
       $link_id = 'supermenu_' . sanitize_title($link_text);
-      $top_level_link = '<li class=" menu-item"><a class="top_level_link"  data-supermenu="'. $link_id .'"   href="'.  $link . '">' . $link_text . '</a></li>';
+      $top_level_link = '<li class=" menu-item"><a class="top_level_link"  data-supermenu="'. $link_id .'"   href="#">' . $link_text . '</a></li>';
       array_push($top_level_links_array, $top_level_link);
 
       $supermenu = '<div class="supermenu" id="'. $link_id  .'" >
@@ -639,9 +639,12 @@ function get_supermenu(){
               $supermenu .= '<div class="col-sm-3">';
               $supermenu .= '<h4>'. get_sub_field('column_title') .'</h4>';
               $supermenu .= '<ul>';
-              foreach ( get_sub_field('links') as $link  ) :
+            if(get_sub_field('links')){
+
+             foreach ( get_sub_field('links') as $link  ) :
                     $supermenu .= '<li><a href="'. $link->guid .'">' .  $link->post_title  . '</a></li>';
               endforeach;
+            }
               $supermenu .= '</ul></div>';
             endwhile;
 

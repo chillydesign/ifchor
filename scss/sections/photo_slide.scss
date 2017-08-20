@@ -82,5 +82,5 @@ overflow: hidden;
   width: 100%;
   min-height: 100%;
   z-index: 1;
-  @include linear-gradient(  transparentize($primary_color,1),   transparentize($primary_color,0.3)   );
+  @include linear-gradient(  transparentize($primary_color,0.7),   transparentize($primary_color,0.2)   );
 }

@@ -44,7 +44,9 @@ ol {
 li li, li p {font-size: inherit;}
 ul ul , ul ol, ol ol {font-size: inherit}
 
-
+p + ul {
+    margin-top: -30px;
+}
 
 
 
@@ -98,7 +100,7 @@ blockquote {
 	margin:40px 20px 40px 40px;
 	font-size: 140%;
 	font-style: italic;
-	max-width: 700px;
+	max-width: 900px;
 }
 blockquote p:last-child {padding-bottom: 0}
 
@@ -106,4 +108,19 @@ input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;}
 
 img {
 	max-width: 100%;
+	width: 100%;
+}
+
+div.wp-caption {
+    max-width: 100%;
+}
+
+figcaption {
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: center;
+}figcaption:before {
+    content: '- ';
+}figcaption:after {
+    content: ' -';
 }

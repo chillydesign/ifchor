@@ -20,12 +20,12 @@
     padding: 0;
 
     &:last-child {
-        margin:0;  
+        margin:0;
     }
 
     .statistic_amount {
       font-size: 6.5em;
-      font-weight: bold;
+      // font-weight: bold;
       margin:0 0 30px;
     }
     .statistic_description {
