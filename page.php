@@ -50,5 +50,5 @@
 
 
 
-
+<?php edit_post_link(); ?>
 <?php get_footer(); ?>

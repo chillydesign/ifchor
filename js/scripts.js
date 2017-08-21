@@ -27,9 +27,9 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
         $(".slick_slider").slick({
             dots: true,
             infinite: true,
-            centerMode: true,
-              autoplay: true,
-            slidesToScroll: 3,
+            centerMode: false,
+              autoplay: false,
+            slidesToScroll: 1,
             slidesToShow: 5,
             responsive: [{
                 breakpoint: 992,

@@ -1,21 +1,21 @@
 
 
-$primary_color: #17296b;
+$primary_color: #251f4b;
 $brand_color: $primary_color;
 
-$yellow: #ffec08;
+$yellow: #ffe135;
 
 $background_color: #fff;
 $light_grey: #f1f1f1;
 
-$font_color: #333;
+$font_color: $primary_color;
 $serif_font_stack:  'Old Standard', georgia, serif;
-$sans_font_stack: 'Asap', 'Source Sans Pro',   'Montserrat', sans-serif;
+$sans_font_stack: 'Lato', 'Source Sans Pro',   'Montserrat', sans-serif;
 
 
 $border_radius: 7px;
 
 $header_color: #222a22;
-$header_height: 65px;
+$header_height: 110px;
 
 $font_size: 1.7em;

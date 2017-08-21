@@ -4,13 +4,18 @@
 
 /*HEADER*/
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin:0;
-  padding:0px;
-  z-index: 100;
+  border-bottom: solid 8px #251f4b;
+  position: relative;
+  z-index: 200;
+
+  &:after {
+      content: '';
+      position: relative;
+      z-index: 200;
+      display: block;
+      width: 100%;
+      border-bottom: solid 2px #fce12e;
+  }
 
 
   nav {
@@ -35,10 +40,11 @@ header {
     display: block;
     transition: all 0.3s;
     border:0;
-    color: white;
+    color: $primary_color;
 
     &:hover {
       background-color: transparentize($font_color, 0.1);
+      color: white;
     }
 
     // &:after {
@@ -69,9 +75,8 @@ header {
 
     &.branding {
       width: 100%;
-      height: 70px;
-      margin-top: 10px;
-      background: url('../img/logo.svg') no-repeat left center;
+      height: 100px;
+      background: url('../img/Ifchor_Logo_2col.png') no-repeat left center;
       background-size: contain;
       z-index: 600;
       position: relative;
@@ -102,10 +107,11 @@ header {
 
     position: absolute;
     z-index: 500;
-    top:58px;
+    top:112px;
     left: 0;
     width: 100%;
     color: white;
+
 
 
 
@@ -129,12 +135,18 @@ header {
     padding-top: 40px;
     padding-bottom: 30px;
     min-height: 200px;
+    border-bottom: 2px solid #fce12e;
 
     .supermenu_image {
       height: 180px;
     }
 
-
+  p {
+    padding-bottom: 0;
+    a {
+      padding: 0;
+    }
+  }
 
     ul {
       margin:0;
@@ -226,11 +238,13 @@ nav#navigation_menu {
         text-decoration: none;
         display: block;
         padding:5px 10px;
-        color: white;
+        color: $primary_color;
         border-bottom:0;
+        text-transform: uppercase;
 
         &.hovered {
               background-color: transparentize($font_color, 0.1);
+              color: white;
         }
 
 
@@ -285,7 +299,7 @@ nav#navigation_menu {
         display: inline-block;
         padding: 0;
         margin: 0;
-        a {padding:0  10px;display: inline-block;line-height: $header_height}
+        a {padding:0  15px 6px;display: inline-block;line-height: 104px; font-size: 0.9em;}
       }
     }
 

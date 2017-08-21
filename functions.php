@@ -636,25 +636,13 @@ function get_supermenu(){
 
             while ( have_rows('supermenu_body') ) : the_row();
 
-              $supermenu .= '<div class="col-sm-3">';
-              $supermenu .= '<h4>'. get_sub_field('column_title') .'</h4>';
-              $supermenu .= '<ul>';
-            if(get_sub_field('links')){
+              $supermenu .= '<div class="col-sm-20">';
+              $supermenu .=  get_sub_field('content');
+              $supermenu .=  '</div>';
 
-             foreach ( get_sub_field('links') as $link  ) :
-                    $supermenu .= '<li><a href="'. $link->guid .'">' .  $link->post_title  . '</a></li>';
-              endforeach;
-            }
-              $supermenu .= '</ul></div>';
             endwhile;
 
-            $supermenu .= '<div class="col-sm-3">
-              <div  class="supermenu_image image_from_background" title="'. $link_text .'" style="background-image:url('. $image['url'] .');"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>';
+            $supermenu .= '</div></div></div>';
 
     array_push($supermenus_array, $supermenu);
 

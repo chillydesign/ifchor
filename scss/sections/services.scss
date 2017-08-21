@@ -9,11 +9,9 @@
         margin-bottom: 50px;
         background-color:$primary_color;
         box-shadow: 0 0 30px transparentize($font_color, 0.5);
-        &.service_container_1 { background-color: lighten(desaturate($primary_color,20),15); }
-        &.service_container_2 { background-color: darken($primary_color,20); }
+        &.service_container_1 { background-color: darken($primary_color,20); }
         &.service_container_3 { background-color: desaturate($primary_color,30); }
         &.service_container_4 { background-color: darken(desaturate($primary_color,20),15); }
-        &.service_container_5 { background-color: saturate($primary_color,20); }
 
 
         .service_inner {
