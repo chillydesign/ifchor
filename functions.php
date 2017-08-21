@@ -430,6 +430,42 @@ function create_post_type_supermenu()
 }
 
 
+// Create 1 Custom Post type for a Demo, called HTML5-Blank
+add_action('init', 'create_post_type_office'); // Add our office Type
+function create_post_type_office()
+{
+
+    register_post_type('office', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Office', 'webfactor'), // Rename these to suit
+            'singular_name' => __('Office', 'webfactor'),
+            'add_new' => __('Add new', 'webfactor'),
+            'add_new_item' => __('Add new office', 'webfactor'),
+            'edit' => __('Edit', 'webfactor'),
+            'edit_item' => __('Edit office', 'webfactor'),
+            'new_item' => __('New office', 'webfactor'),
+            'view' => __('View office', 'webfactor'),
+            'view_item' => __('View office', 'webfactor'),
+            'search_items' => __('Search office', 'webfactor'),
+            'not_found' => __('No offices found', 'webfactor'),
+            'not_found_in_trash' => __('No offices found in Trash', 'webfactor')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'exclude_from_search' => true,
+        'supports' => array(
+            'title'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+
+        ) // Add Category and Post Tags support
+    ));
+}
+
+
 add_action('init', 'create_post_type_person'); // Add our person Type
 function create_post_type_person()
 {
