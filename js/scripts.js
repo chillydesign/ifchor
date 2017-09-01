@@ -25,7 +25,7 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
         });
 
         $(".slick_slider").slick({
-            dots: true,
+            dots: false,
             infinite: true,
             centerMode: false,
               autoplay: false,
@@ -56,6 +56,9 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
                 need_to_animate_statistics = false;
             }
         }
+
+
+
 
 
         $menu_button.on('click', function(){
@@ -89,6 +92,9 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
         })
 
 
+
+
+
         $window.scroll(function(){
 
             var windowScroll = $window.scrollTop();
@@ -106,11 +112,22 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
                 }
             }
 
-
-
         });
 
 
+
+        // aniamte entry of title on homepage
+        var $h1_spans = $('h1 span');
+        if ($h1_spans.length > 1) {
+
+            $h1_spans.each(function(i, span){
+                var $span = $(this);
+                setTimeout( function(){
+                        $span.addClass('fadeIn');
+                }, (1400 * i)  );
+
+            })
+        }
 
 
 

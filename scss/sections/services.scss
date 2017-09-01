@@ -8,10 +8,15 @@
         margin-top: 50px;
         margin-bottom: 50px;
         background-color:$primary_color;
-        box-shadow: 0 0 30px transparentize($font_color, 0.5);
+        display: none;
+        //    box-shadow: 0 0 30px transparentize($font_color, 0.5);
         &.service_container_1 { background-color: darken($primary_color,20); }
         &.service_container_3 { background-color: desaturate($primary_color,30); }
         &.service_container_4 { background-color: darken(desaturate($primary_color,20),15); }
+
+        &.service_container_primary {
+            display: block;
+        }
 
 
         .service_inner {
@@ -84,12 +89,18 @@
 
 @media (min-width:768px){
 
+    .section_services {
+        .service_container {
 
-    .service_container {
+            transition: all 0.3s;
+            position: relative;
+                display: block;
 
-        transition: all 0.3s;
-        position: relative;
-        //
+
+
+
+            //
+        }
     }
 
 

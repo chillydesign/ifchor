@@ -8,7 +8,8 @@
 
 <?php for ($count_sliders=0; $count_sliders < 10; $count_sliders++) { ?>
     <?php while ( have_rows('service') ) : the_row(); ?>
-        <div class="service_container service_container_<?php echo  $i;  ?>  "  >
+        <?php $primary_class = ( $count_sliders ==0) ? ' service_container_primary  ' : ''; ?>
+        <div class="service_container service_container_<?php echo  $i;  ?>  <?php echo  $primary_class; ?>  "  >
           <?php $link = '#'; if(get_sub_field('link')) : ?>
             <?php $link = get_sub_field('link'); ?>
           <?php endif; ?>

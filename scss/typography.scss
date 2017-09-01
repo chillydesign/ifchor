@@ -12,11 +12,24 @@ h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: upperca
 
 
 @media (min-width: 768px){
-	h1 {font-size: 5em;}
+	h1 {font-size: 3.5em;}
 	h2 {font-size: 3.1em}
 	h3 {font-size: 2.41em}
 	h4 {font-size: 1.79em}
 
+}
+
+h1 span {
+    opacity: 0;
+    transform:scale(0.95);
+    transition:all  1.7s;
+    display: inline-block;
+
+    &.fadeIn {
+        opacity: 1;
+        transform: scale(1);
+
+    }
 }
 
 
