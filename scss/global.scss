@@ -48,6 +48,10 @@ section {
 
 }
 
+.hovered {
+    transform: scale(1.2);
+}
+
 @import 'sections/top_section';
 @import 'sections/page_title';
 @import 'sections/photo_slide';

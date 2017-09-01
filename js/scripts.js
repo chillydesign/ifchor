@@ -131,6 +131,19 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
 
 
+        $('.location_box').hide();
+        $('.flag_icon').on('click', function(){
+            var $this = $(this);
+            var $box = $this.attr('id');
+
+            $('.location_box').hide();
+            $('.location_box_' + $box).show();
+        })
+        $('.close_location_box').on('click', function(e){
+            e.preventDefault();
+                $('.location_box').hide();
+        });
+
 
 
 
