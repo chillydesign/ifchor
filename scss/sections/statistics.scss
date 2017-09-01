@@ -1,5 +1,7 @@
 .section_statistics {
-  background: $light_grey;
+  background: $primary_color;
+      border-top: 5px solid $yellow;
+      border-bottom: 5px solid $yellow;
 }
 
 
@@ -12,6 +14,8 @@
   padding: 0;
   list-style: none;
 
+
+
   .statistic {
     flex:1;
     text-align: center;
@@ -23,14 +27,27 @@
         margin:0;
     }
 
+    // $stat_height: 150px;
+    // .statistic_amount_outer {
+    //     width:$stat_height;
+    //     height: $stat_height;
+    //     background:$yellow;
+    //     color:$primary_color;
+    //     border-radius: 50%;
+    //     text-align: center;
+    //     line-height: $stat_height;
+    // }
+
     .statistic_amount {
       font-size: 6.5em;
       // font-weight: bold;
       margin:0 0 30px;
+      color: $yellow;
     }
     .statistic_description {
       font-size: 2em;
       color: lighten($font_color, 10);
+      color: lighten($yellow, 10);
     }
   }
 
