@@ -150,8 +150,97 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 		</div>
 	</div>
  </div>
-	<?php } ?>
+	<?php } elseif(get_sub_field('type') == 'function'){ ?>
 
-	<!-- END IF PEOPLE -->
+	<div class="container">
+
+	<?php $offices = get_sub_field('offices'); ?>
+<?php $count = 1; ?>
+	<?php foreach ($offices as $value) {
+
+		 $value->post_title;
+		 $id = $value->ID;
+
+	?>
+	<div class="office_list">
+<?php if($count == 1){ ?>
+		<ul class="people city">
+				<li class="person">
+						<div class="profile_picture">
+								<div class="image_from_background" style="background-image: url('<?php echo get_field('flag', $id)['url']; ?>"></div>
+						</div>
+						<div class="profile_details">
+								<h2><?php echo get_field('function', $id); ?></h2>
+								<p>
+									<?php if (get_field('address', $id)) { echo get_field('address', $id) . ', ';} ?>
+									<?php if (get_field('postcode', $id)) { echo get_field('postcode', $id);} ?>
+									 <?php echo get_field('suburb', $id); ?> - <?php echo get_field('country', $id); ?> <br />
+									 <?php if (get_field('telephone', $id)) { echo 'TEL : ' . get_field('telephone', $id);} ?>
+									 <?php if (get_field('telephone', $id) && get_field('fax', $id)) { echo ' - ';} ?>
+									 <?php if (get_field('fax', $id)) { echo 'FAX : ' . get_field('fax', $id);} ?><br />
+									<?php if (get_field('email', $id)) { echo '<a href="' . get_field('email', $id) . '">' . get_field('email', $id) . '</a>';} ?>
+									</p>
+								</div>
+
+						</li>
+
+				</ul>
+				<?php } else { ?>
+					<ul class="people city">
+						<li class="person">
+						<div class="profile_details">
+								<h2><?php echo get_field('function', $id); ?></h2>
+								<p>
+									 <?php if (get_field('telephone', $id)) { echo 'TEL : ' . get_field('telephone', $id);} ?>
+									 <?php if (get_field('telephone', $id) && get_field('fax', $id)) { echo ' - ';} ?>
+									 <?php if (get_field('fax', $id)) { echo 'FAX : ' . get_field('fax', $id);} ?><br />
+									<?php if (get_field('email', $id)) { echo '<a href="' . get_field('email', $id) . '">' . get_field('email', $id) . '</a>';} ?>
+									</p>
+								</div>
+							</li>
+
+					</ul>
+
+				<?php } ?>
+				<ul class="people row">
+					<?php $post_count = 1; ?>
+
+	<?php $args = array(
+	'post_type' => 'person',
+	'meta_query' => array(
+	        array(
+	            'key' => 'office',
+	            'value' => $id,
+	            'compare' => 'LIKE'
+	        )
+				));
+	query_posts($args); while (have_posts()) : the_post(); ?>
+
+	<?php $post_id = get_the_ID(); ?>
+	<li class="person col-sm-4">
+		<div class="profile_details">
+			<h2><?php the_title(); ?></h2>
+			<p>
+			<?php if (get_field('telephone', $post_id)) { echo '&#9743; Phone: ' . get_field('telephone', $post_id) .  ' <br>';} ?>
+			<?php if (get_field('mobile', $post_id)) { echo '&#9990;	 Mobile: ' . get_field('mobile', $post_id) .  ' <br>';} ?>
+			<?php if (get_field('email', $post_id)) { echo '&#9993; Email: ' . get_field('email', $post_id) .  ' <br>';} ?>
+
+			</p>
+		</div>
+	</li>
+	<?php if($post_count % 3 == 0){echo "</ul><ul class='people row'>";} ?>
+
+	<?php $post_count++; ?>
+	<?php endwhile; ?>
+	</ul>
+
+	</div>
+
+	<?php $count++; ?>
+	<?php } ?>
+	</div>
+	</div>
+
+	<?php } ?>
 
 <?php wp_reset_query(); ?>
