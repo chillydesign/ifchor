@@ -1,0 +1,56 @@
+.languages_list {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+
+    .language {
+
+        flex:1;
+        max-width: 50%;
+        min-width: 50%;
+        text-align: center;
+        margin:0 0 20px;
+        list-style: none;
+
+            p {
+
+            }
+
+
+            img {
+                width:60px;
+                height: auto;
+
+            }
+    }
+
+
+
+}
+
+@media(min-width:768px){
+
+    .languages_list {
+        .language {
+            max-width: 33.333%;
+            min-width: 33.333%;
+
+        }
+    }
+}
+
+
+
+@media(min-width:988px){
+
+    .languages_list {
+        .language {
+            max-width: 20%;
+            min-width: 20%;
+
+        }
+    }
+}
