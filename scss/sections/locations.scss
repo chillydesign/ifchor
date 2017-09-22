@@ -3,6 +3,10 @@ svg {
   height: auto;
 }
 
+#path2477 {
+  fill:$primary_color;
+}
+
 // circle {
 //    animation: scaleinout 1.5s ease-in-out infinite alternate;
 //    transform-origin: 50% 50%;
@@ -27,16 +31,14 @@ svg {
 
 
 .location_box {
-    position: absolute;
+    position: relative;
     padding: 30px;
     background: $primary_color;
     border-top:3px solid $yellow;
     border-bottom:3px solid $yellow;
     color: white;
-    bottom:10px;
-    left:10px;
-    min-width: 400px;
     font-size: 80%;
+    margin-top: 20px;
 
     p {
         color: transparentize(white, 0.2);
@@ -78,4 +80,13 @@ svg {
 
 .flag_icon {
     cursor: pointer;
+}
+
+@media(min-width:981px){
+  .location_box {
+      position: absolute;
+      bottom:10px;
+      left:10px;
+      min-width: 400px;
+    }
 }

@@ -39,7 +39,7 @@ table {	border-collapse: collapse;	border-spacing: 0}
   }
 
   @media (min-width: 768px) {
-    .container {
+    .container, header nav ul {
       width: 750px;
     }
 
@@ -47,12 +47,12 @@ table {	border-collapse: collapse;	border-spacing: 0}
 
   }
   @media (min-width: 992px) {
-    .container {
+    .container, header nav ul {
       width: 970px;
     }
   }
   @media (min-width: 1200px) {
-    .container {
+    .container, header nav ul {
       width: 1170px;
     }
   }

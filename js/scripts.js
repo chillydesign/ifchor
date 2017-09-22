@@ -63,6 +63,7 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
         $menu_button.on('click', function(){
             $navigation_menu.toggleClass('menu_visible');
+            $('body').toggleClass('body_fixed');
         });
 
         $top_level_links.on('mouseover', function(){

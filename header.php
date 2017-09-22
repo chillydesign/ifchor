@@ -18,54 +18,30 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-<?php $supermenu = get_supermenu(); ?>
 
 			<header class="header" id="header">
 				<div class="container">
-					<div class="row">
-						<div class="col-lg-3 col-lg-push-0 col-xs-10 col-xs-push-1">
 							<a href="<?php echo home_url(); ?>" class="branding">
 								<span><?php bloginfo('name'); ?></span>
 							</a>
-						</div>
-						<div class="col-lg-9">
+				</div>
 							<nav id="navigation_menu" role="navigation">
 								 <ul>
-									 <?php // chilly_nav('primary-navigation'); ?>
-									 	<?php echo $supermenu->top_level_links; ?>
+									 <?php  chilly_nav('primary-navigation'); ?>
 
 									 <li id="search_li">
 										 <a data-supermenu="supermenu_searchform" class="top_level_link" href="#" id="search_opener">&nbsp;</a>
-										 	<form>
-												<input type="text" name="s" placeholder="serach this site" />
-											</form>
+										 <div class="custom-sub">
+											 <div class="container">
+												 	<form>
+														<input type="text" name="s" placeholder="Search this site" />
+													</form>
+												</div>
+										</div>
 									 </li>
 
 								 </ul>
 							</nav>
-						</div>
 
-					</div>
 					<a href="#" id="menu_button" >Menu</a>
-				</div>
-
-
-
-				<div id="supermenus">
-					 	<?php echo $supermenu->supermenus; ?>
-
-						<div class="supermenu" id="supermenu_searchform" >
-			        <div class="container">
-								<h2>Search</h2>
-								<form>
-								 <input type="text" name="s" placeholder="search this site" />
-							 </form>
-							</div>
-						</div>
-
-					 <div class="supermenu_background"></div>
-				</div>
-
-
-
 			</header>

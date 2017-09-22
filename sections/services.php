@@ -1,37 +1,44 @@
 <?php $item_count =  sizeof(  get_sub_field('service')  ); ?>
-<?php $item_class =  count_to_bootstrap_class(  $item_count ); ?>
 <?php $i = 1; ?>
 
 <div class="container">
+  <div class="services_container">
 
-  <div class="slick_slider">
+    <div class="service_box">
+      <a href="<?php the_sub_field('link1'); ?>">
+        <?php include('drybulk.svg'); ?>
+          <h4><?php the_sub_field('title1'); ?></h4>
+      </a>
+    </div>
 
-<?php for ($count_sliders=0; $count_sliders < 10; $count_sliders++) { ?>
-    <?php while ( have_rows('service') ) : the_row(); ?>
-        <?php $primary_class = ( $count_sliders ==0) ? ' service_container_primary  ' : ''; ?>
-        <div class="service_container service_container_<?php echo  $i;  ?>  <?php echo  $primary_class; ?>  "  >
-          <?php $link = '#'; if(get_sub_field('link')) : ?>
-            <?php $link = get_sub_field('link'); ?>
-          <?php endif; ?>
-          <a  class="service_inner  " href="<?php echo $link; ?>">
-          <?php if(get_sub_field('icon')) : ?>
-            <?php $icon =  get_sub_field('icon'); ?>
-          <img src="<?php echo $icon['url']; ?>" alt=""/>
-          <?php endif ?>
-          <?php if(get_sub_field('title')) : ?>
-            <h4><?php echo get_sub_field('title'); ?></h4>
-          <?php endif ?>
-          </a>
-        </div>
-        <?php $i++; ?>
-    <?php endwhile; ?>
+    <div class="service_box">
+      <a href="<?php the_sub_field('link2'); ?>">
+        <?php include('tankers.svg'); ?>
+          <h4><?php the_sub_field('title2'); ?></h4>
+      </a>
+    </div>
 
-  <?php } ?>
+    <div class="service_box">
+      <a href="<?php the_sub_field('link3'); ?>">
+        <?php include('sale-purchase.svg'); ?>
+          <h4><?php the_sub_field('title3'); ?></h4>
+      </a>
+    </div>
+
+    <div class="service_box">
+      <a href="<?php the_sub_field('link4'); ?>">
+        <?php include('ship-finance.svg'); ?>
+          <h4><?php the_sub_field('title4'); ?></h4>
+      </a>
+    </div>
+
+    <div class="service_box">
+      <a href="<?php the_sub_field('link5'); ?>">
+        <?php include('research.svg'); ?>
+          <h4><?php the_sub_field('title5'); ?></h4>
+      </a>
+    </div>
 
 
-
-
-  </div> <!-- END OF ROW -->
-
-
+  </div>
 </div><!--  END OF CONTAINER -->

@@ -543,7 +543,7 @@ function chilly_nav($menu){
         'link_after'      => '',
         'items_wrap'      => '%3$s',
         'depth'           => 0,
-        'walker'          => ''
+        'walker'          => new Child_Wrap()
         )
     );
 
@@ -694,6 +694,22 @@ function get_supermenu(){
   return $return;
 
 
+}
+
+
+
+class Child_Wrap extends Walker_Nav_Menu
+{
+    function start_lvl(&$output, $depth = 0, $args = array())
+    {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<div class=\"custom-sub\"><div class=\"container\"><ul class=\"sub-menu\">\n";
+    }
+    function end_lvl(&$output, $depth = 0, $args = array())
+    {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul></div></div>\n";
+    }
 }
 
 ?>
