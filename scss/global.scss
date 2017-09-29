@@ -48,6 +48,9 @@ section {
 
 }
 
+section.section_colonnes + section.section_colonnes, section.section_two_thirds_one_third + section.section_colonnes, section.colonnes + section.section_two_thirds_one_third {
+	padding-top: 0;
+}
 
 @import 'sections/top_section';
 @import 'sections/page_title';

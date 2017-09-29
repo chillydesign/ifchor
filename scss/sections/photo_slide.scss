@@ -19,7 +19,7 @@ overflow: hidden;
   }
 
   .photo_slide {
-    filter: grayscale(60%);
+    // filter: grayscale(60%);
   }
 
   a {
@@ -74,7 +74,7 @@ overflow: hidden;
     left:0;
     min-width: 100%;
     min-height: 100%;
-    filter:grayscale(80%);
+    filter:grayscale(50%);
   }
 
 
@@ -87,5 +87,5 @@ overflow: hidden;
   width: 100%;
   min-height: 100%;
   z-index: 1;
-  @include linear-gradient(  transparentize($primary_color,0.7),   transparentize($primary_color,0.2)   );
+  @include linear-gradient(  transparentize($primary_color,0.9),   transparentize($primary_color,0.5)   );
 }

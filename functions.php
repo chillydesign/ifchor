@@ -610,7 +610,8 @@ add_action( 'after_setup_theme', 'remove_json_api' );
 function count_to_bootstrap_class($count){
 
     if ($count == 1) {
-        $class = 'col-sm-10 col-sm-push-1 col-md-8 col-md-push-2';
+        // $class = 'col-sm-10 col-sm-push-1 col-md-8 col-md-push-2';
+        $class = 'col-sm-12';
     } elseif ($count == 2) {
         $class = 'col-sm-6';
     } elseif ($count == 3) {
