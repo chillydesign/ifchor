@@ -713,4 +713,50 @@ class Child_Wrap extends Walker_Nav_Menu
     }
 }
 
+
+
+
+add_action('pre_get_posts','alter_search_query');
+
+function alter_search_query($query) {
+	//gets the global query var object
+	global $wp_query, $wpdb;
+
+
+    if (is_search()){
+
+        // get all the post ids that have any postmeta that match the search term
+        global $wpdb;
+        $sql = "SELECT DISTINCT ID FROM wp_postmeta
+                LEFT JOIN wp_posts ON wp_postmeta.post_id = wp_posts.ID
+                WHERE post_status = 'publish'
+                AND  (
+                    `meta_value` LIKE %s
+                    OR  post_title LIKE %s
+                    OR  post_content LIKE %s
+                )";
+
+        $search =  get_query_var( 's', '' );
+        $str = '%'. $search  .'%';
+        $results = $wpdb->get_results($wpdb->prepare( $sql, $str, $str, $str ));
+        $ids = array();
+        foreach ($results as $result) {
+            array_push($ids,   intval($result->ID)  );
+        }
+
+        // replace the current wp query with the IDs that i found
+        $query->query_vars['post__in'] = $ids;
+        $query->query_vars['s'] = null;
+
+
+    }
+
+
+
+
+
+
+}
+
+
 ?>
