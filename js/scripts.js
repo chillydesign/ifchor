@@ -20,9 +20,9 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
 
 
-        $('.service_container').each(function(){
-            $(this)
-        });
+        // $('.service_container').each(function(){
+        //     $(this)
+        // });
 
         $(".slick_slider").slick({
             dots: false,
@@ -66,6 +66,9 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
             $('body').toggleClass('body_fixed');
         });
 
+
+
+
         $top_level_links.on('mouseover', function(){
             var $this = $(this);
             var the_supermenu  = $this.data('supermenu');
@@ -84,12 +87,31 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
         });
 
 
+        $('#navigation_menu > ul >  li > a').on('click', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var $this = $(this);
+                var $parent = $this.parent();
+                var $has_clicked_class =  ($parent.hasClass('clicked'));
+                $('#navigation_menu > ul >  li').removeClass('clicked');
+                if ($has_clicked_class == false) {
+                    $parent.addClass('clicked');
+                }
+
+        });
+
+
+
+
 
         // if press escape key, hide menu
         $(document).on('keydown', function(e){
             if(e.keyCode == 27 ){
                 $navigation_menu.removeClass('menu_visible');
+                $('#navigation_menu > ul > li').removeClass('clicked');
             }
+        }).on('click', function(e){
+                $('#navigation_menu > ul > li').removeClass('clicked');
         })
 
 

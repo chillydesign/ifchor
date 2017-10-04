@@ -673,6 +673,7 @@ function get_supermenu(){
 
             while ( have_rows('supermenu_body') ) : the_row();
 
+
               $supermenu .= '<div class="col-sm-20">';
               $supermenu .=  get_sub_field('content');
               $supermenu .=  '</div>';

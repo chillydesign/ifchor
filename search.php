@@ -3,7 +3,7 @@
 
 	<!-- section -->
 	<section id="top_section">
-		<h1><?php echo sprintf( __( '%s Search Results for ', 'webfactor' ), $wp_query->found_posts );?>"<?php echo get_search_query(); ?>"</h1>
+		<h1><?php echo __('Search Results for ', 'webfactor' ); ?> "<?php echo $_GET['s']; ?>"</h1>
 	</section>
 
 	<section class="container">

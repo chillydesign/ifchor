@@ -185,7 +185,7 @@ nav#navigation_menu {
 }
 
 
-@media(max-width:1199px){
+@media(max-width:991px){
   .custom-sub .container{width: 400px; max-width: 100%; }
   nav#navigation_menu ul {margin: auto;}
     nav#navigation_menu ul li li {display: block;}
@@ -210,7 +210,7 @@ nav#navigation_menu {
 
 }
 
-@media (min-width:1200px){
+@media (min-width:992px){
   .current-menu-ancestor .custom-sub, .current-menu-ancestor .custom-sub {
     display: block!important;
 }
@@ -254,7 +254,7 @@ nav#navigation_menu {
           .custom-sub {
             position: absolute;
             width: 100%;
-            top: 71px;
+            top: 80px;
             left: 0;
             background: #ffe135;
             display: none;
@@ -278,11 +278,25 @@ nav#navigation_menu {
             }
           }
 
-          &:hover .custom-sub{
-            display: block;
+          &:hover{
+               .custom-sub {
+                display: block;
+
+              }
           }
+
+          &.clicked {
+              .custom-sub {
+                  display: block;
+      z-index: 100;
+              }
+          }
+
+
       }
     }
+
+
 
     a.branding {text-align: left;}
 
@@ -292,7 +306,7 @@ nav#navigation_menu {
         padding: 22px 15px;
       }
       input {
-        margin:10px 0;
+        margin:3px 0;
         border:0;
         background: $yellow;
       }
