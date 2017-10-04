@@ -33,7 +33,7 @@
 										 <a data-supermenu="supermenu_searchform" class="top_level_link" href="#" id="search_opener">&nbsp;</a>
 										 <div class="custom-sub">
 											 <div class="container">
-												 	<form>
+												 	<form method="get" action="<?php echo home_url(); ?>">
 														<input type="text" name="s" placeholder="Search this site" />
 													</form>
 												</div>
