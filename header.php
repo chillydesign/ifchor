@@ -34,7 +34,7 @@
 										 <div class="custom-sub">
 											 <div class="container">
 												 	<form method="get" action="<?php echo home_url(); ?>">
-														<input type="text" name="s" placeholder="Search this site" />
+														<input autofocus id="header_s" type="text" name="s" placeholder="Search this site" />
 													</form>
 												</div>
 										</div>

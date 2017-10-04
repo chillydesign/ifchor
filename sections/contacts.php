@@ -117,9 +117,14 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 			<div class="profile_details">
 				<h2><?php the_title(); ?></h2>
 				<p>
-				<?php if (get_field('telephone', $post_id)) { echo '&#9743; Tel: ' . get_field('telephone', $post_id) .  ' <br>';} ?>
-				<?php if (get_field('mobile', $post_id)) { echo '&#9990;	 Mobile: ' . get_field('mobile', $post_id) .  ' <br>';} ?>
-				<?php if (get_field('email', $post_id)) { echo '&#9993; Email: ' . get_field('email', $post_id) .  ' <br>';} ?>
+                    <?php
+                    $telephone = get_field('telephone', $post_id);
+                    $mobile = get_field('mobile', $post_id);
+                    $email = get_field('email', $post_id);
+                     ?>
+				<?php if ($telephone) { echo '&#9743; Tel: <a href="tel:'. $telephone.'">' . $telephone .  '</a> <br>';} ?>
+				<?php if ($mobile) { echo '&#9990;	 Mobile: <a href="tel:'. $mobile.'">' . $mobile .  '</a> <br>';} ?>
+				<?php if ($email) { echo '&#9993; Email: <a href="mailto:' . $email . '">' . $email .  '</a> <br>';} ?>
 
 				</p>
 			</div>

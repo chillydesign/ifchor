@@ -20,6 +20,7 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
 
 
+
         // $('.service_container').each(function(){
         //     $(this)
         // });
@@ -69,6 +70,9 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
 
 
+
+
+
         $top_level_links.on('mouseover', function(){
             var $this = $(this);
             var the_supermenu  = $this.data('supermenu');
@@ -99,6 +103,11 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
                 }
 
         });
+
+            $('#navigation_menu > ul >  li').on('click', function(e){
+
+                e.stopPropagation();
+            })
 
 
 

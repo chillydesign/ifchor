@@ -48,6 +48,14 @@ ul.city {
                 font-size: 1.4em;
             }
 
+            a {
+                border-bottom: 1px solid transparent;
+
+                &:hover {
+                    border-bottom:1px dotted #777
+                }
+            }
+
         }
     }
 
@@ -84,7 +92,7 @@ ul.city {
 
 .contact_list {
     position: relative;
-    top: 50px;
+    top: 90px; 
 }
 
 .contacts_az {

@@ -6,10 +6,9 @@
 		<article>
 			<section class="section_photo_slide">
 			<?php $background_image =  get_field('background_image'); ?>
-			<?php $size =  get_field('size'); ?>
-			<?php if (is_array($size) ) $size = $size[0]; ?>
 
-			<div class="photo_slide_container  photo_slide_size_<?php echo $size;  ?>">
+
+			<div class="photo_slide_container  photo_slide_size_medium">
 
 					<div class="photo_slide_content">
 						<?php echo get_field('content'); ?>

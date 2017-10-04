@@ -164,7 +164,7 @@ nav#navigation_menu {
           max-width: 100%;
           margin-bottom: 20px;
           li{
-            display: inline-block;
+            display: block;
             font-size: 0.8em;
             a{
 
@@ -250,7 +250,13 @@ nav#navigation_menu {
         a {
           padding:27px  15px ;
           display: inline-block;
-          font-size: 1em;}
+          font-size: 1em;
+
+          &:hover {
+              background-color: darken($primary_color,10);
+          }
+
+      }
           .custom-sub {
             position: absolute;
             width: 100%;
@@ -266,21 +272,26 @@ nav#navigation_menu {
               margin-bottom: 0;
               li{
                 font-size: 0.9em!important;
+                display: inline-block;
               }
             }
             a{
               padding: 10px 15px!important;
               color: $primary_color!important;
 
+            &:hover {
+                background-color: darken(#ffe135, 15);
+            }
+
               &:hover, &:focus{
-                color: white!important;
+                color: black!important;
               }
             }
           }
 
           &:hover{
                .custom-sub {
-                display: block;
+            //    display: block;
 
               }
           }
@@ -288,7 +299,7 @@ nav#navigation_menu {
           &.clicked {
               .custom-sub {
                   display: block;
-      z-index: 100;
+                  z-index: 100;
               }
           }
 
