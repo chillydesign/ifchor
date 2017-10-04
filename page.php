@@ -16,10 +16,12 @@
 					</div>
 
 					<?php if(get_field('video')){ ?>
+					<div class="video-container">
 						<video id="vidbg" autoplay="autoplay" loop="loop" >
 							<source src="<?php echo get_field('video-mp4')['url']; ?>" />
 							<source src="<?php echo get_field('video-ogv')['url']; ?>" />
 						</video>
+					</div>
 					<?php } ?>
 					<div class="parallax photo_slide " style="background-image: url(<?php echo $background_image['url']; ?>);"></div>
 					<div class="photo_gradient"></div>

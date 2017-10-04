@@ -1,8 +1,9 @@
 .services_container{
   text-align: center;
+  margin: 0 -10px;
   .service_box {
       width: 32%;
-      padding: 8px;
+      padding: 0 10px;
       display: inline-block;
       vertical-align: top;
       a{
@@ -36,8 +37,10 @@
 
 @media(min-width:982px){
   .services_container{
+    margin:0 -60px;
     .service_box {
       width: 19%;
+      padding: 0 40px;
     }
   }
 }

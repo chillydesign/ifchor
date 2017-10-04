@@ -7,7 +7,7 @@ header {
   position: relative;
   z-index: 200;
   background: $primary_color;
-  min-height: 70px;
+  min-height: 80px;
 
 
   input {
@@ -16,8 +16,8 @@ header {
   }
 
   a.branding {
-      width: 170px;
-      height: 50px;
+      width: 180px;
+      height: 60px;
       margin: 10px 0;
       background: url('../img/logo-white.svg') no-repeat left center;
       background-size: contain;
@@ -187,6 +187,27 @@ nav#navigation_menu {
 
 @media(max-width:1199px){
   .custom-sub .container{width: 400px; max-width: 100%; }
+  nav#navigation_menu ul {margin: auto;}
+    nav#navigation_menu ul li li {display: block;}
+  nav#navigation_menu ul li li a:after {
+      display: none;
+  }
+
+  nav#navigation_menu ul li a:after {
+      content: '';
+      width: 50px;
+      border-bottom: solid 1px yellow;
+      display: block;
+      margin: 10px auto 0;
+  }
+  nav#navigation_menu ul li li a {
+      margin-bottom: 0;
+  }
+  nav#navigation_menu ul li a {
+      display: block;
+      margin-bottom: 5px;
+  }
+
 }
 
 @media (min-width:1200px){
@@ -202,7 +223,8 @@ nav#navigation_menu {
   nav#navigation_menu {
     padding:0px 0 0;
     bottom:auto;
-    text-align:right;width:100%;
+    text-align:center;
+    width:100%;
     background: none;
     transform:none;
     height: auto;
@@ -214,13 +236,15 @@ nav#navigation_menu {
     }
     ul {
       margin: auto;
+      padding-left: 60px;
+      li#search_li {float: right;padding: 5px 0;}
       li {
         display: inline-block;
         padding: 0;
         margin: 0;
         font-size: 1.7em;
         a {
-          padding:22px  15px ;
+          padding:27px  15px ;
           display: inline-block;
           font-size: 1em;}
           .custom-sub {
@@ -234,6 +258,7 @@ nav#navigation_menu {
 
             ul.sub-menu{
               width: 100%;
+              padding-left: 0!important;
               margin-bottom: 0;
               li{
                 font-size: 0.9em!important;

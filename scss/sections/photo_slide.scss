@@ -50,8 +50,12 @@ overflow: hidden;
 }
 
 .home .photo_slide_content h1 {
-        padding:50px 0 0;
-        margin-bottom: -10px;
+        padding:0px 0 0;
+        margin-top: -50px;
+      }
+      @media(max-width:650px){
+        .home .photo_slide_content h1 {text-align: left;margin-top: -120px;}
+        .home .photo_slide_content h1 span{display: block; padding: 20px 30px;}
       }
 
   .photo_slide {
@@ -68,12 +72,23 @@ overflow: hidden;
 
   }
 
+  .video-container {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+  }
+
   #vidbg {
     position: absolute;
-    bottom:0;
-    left:0;
-    min-width: 100%;
-    min-height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    min-height: 50%;
+    min-width: 50%;
     filter:grayscale(50%);
   }
 

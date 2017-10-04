@@ -8,9 +8,10 @@
 
     .language {
 
-        flex:1;
+        flex: 1 0 auto;
         max-width: 50%;
         min-width: 50%;
+        width: 50%;
         text-align: center;
         margin:0 0 20px;
         list-style: none;
@@ -21,7 +22,7 @@
 
 
             img {
-                width:60px;
+                width:50px;
                 height: auto;
 
             }
@@ -35,6 +36,7 @@
 
     .languages_list {
         .language {
+            width: 33.333%;
             max-width: 33.333%;
             min-width: 33.333%;
 
@@ -50,6 +52,7 @@
         .language {
             max-width: 20%;
             min-width: 20%;
+            width: 20%;
 
         }
     }

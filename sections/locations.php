@@ -9,7 +9,7 @@
             <p>Level 23, 360 Collins Street  <br />
                 Melbourne VIC 3000 <br />
                 +61 (0)410 668 506 <br />
-                <a href="#">Google Maps</a>
+                <a href="https://www.google.co.uk/maps/place/360+Collins+St,+Melbourne+VIC+3000,+Australia/@-37.8163265,144.9601497,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad642b4a2bcf095:0x71c25fe89fa00c!8m2!3d-37.8163265!4d144.9623384" target="_blank">Google Maps</a>
             </p>
             <a href="#" class="close_location_box">X</a>
         </div>
