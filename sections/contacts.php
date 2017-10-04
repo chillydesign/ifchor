@@ -22,15 +22,22 @@
 					</div>
 					<div class="profile_details">
 							<h2><?php echo get_field('suburb', $id); ?></h2>
-							<p>
-								<?php if (get_field('address', $id)) { echo get_field('address', $id) . ', ';} ?>
-								<?php if (get_field('postcode', $id)) { echo get_field('postcode', $id);} ?>
-								 <?php echo get_field('suburb', $id); ?> - <?php echo get_field('country', $id); ?> <br />
-								 <?php if (get_field('telephone', $id)) { echo 'TEL : ' . get_field('telephone', $id);} ?>
-								 <?php if (get_field('telephone', $id) && get_field('fax', $id)) { echo ' - ';} ?>
-								 <?php if (get_field('fax', $id)) { echo 'FAX : ' . get_field('fax', $id);} ?><br />
-								<?php if (get_field('email', $id)) { echo '<a href="' . get_field('email', $id) . '">' . get_field('email', $id) . '</a>';} ?>
-								</p>
+<p>
+
+    <?php $address = get_field('address', $id); ?>
+    <?php $postcode = get_field('postcode', $id); ?>
+    <?php $telephone = get_field('telephone', $id); ?>
+    <?php $email = get_field('email', $id); ?>
+    <?php $fax = get_field('fax', $id); ?>
+
+    <?php if ($address) { echo $address  . ', ';} ?>
+    <?php if ($postcode) { echo $postcode; } ?>
+    <?php echo get_field('suburb', $id); ?> - <?php echo get_field('country', $id); ?> <br />
+    <?php if ($telephone) { echo 'TEL : <a href="tel:' . $telephone . '">'. $telephone.'</a>' ;} ?>
+    <?php if ($telephone && $fax) { echo ' - ';} ?>
+    <?php if ($fax) { echo 'FAX : <a href="tel:' . $fax . '">'. $fax.'</a>'; }; ?><br />
+    <?php if ($email) { echo '<a href="mailto:' . $email . '">' . $email . '</a>';} ?>
+	</p>
 							</div>
 
 					</li>
@@ -54,10 +61,15 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 <li class="person col-sm-4">
 	<div class="profile_details">
 		<h2><?php the_title(); ?></h2>
+        <?php
+        $telephone = get_field('telephone', $post_id);
+        $mobile = get_field('mobile', $post_id);
+        $email = get_field('email', $post_id);
+         ?>
 		<p>
-		<?php if (get_field('telephone', $post_id)) { echo '&#9743; Tel: ' . get_field('telephone', $post_id) .  ' <br>';} ?>
-		<?php if (get_field('mobile', $post_id)) { echo '&#9990;	 Mobile: ' . get_field('mobile', $post_id) .  ' <br>';} ?>
-		<?php if (get_field('email', $post_id)) { echo '&#9993; Email: ' . get_field('email', $post_id) .  ' <br>';} ?>
+        <?php if ($telephone) { echo '&#9743; Tel: <a href="tel:'. $telephone.'">' . $telephone .  '</a> <br>';} ?>
+        <?php if ($mobile) { echo '&#9990;	 Mobile: <a href="tel:'. $mobile.'">' . $mobile .  '</a> <br>';} ?>
+        <?php if ($email) { echo '&#9993; Email: <a href="mailto:' . $email . '">' . $email .  '</a> <br>';} ?>
 
 		</p>
 	</div>
@@ -173,15 +185,23 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 						</div>
 						<div class="profile_details">
 								<h2><?php echo get_field('function', $id); ?></h2>
-								<p>
-									<?php if (get_field('address', $id)) { echo get_field('address', $id) . ', ';} ?>
-									<?php if (get_field('postcode', $id)) { echo get_field('postcode', $id);} ?>
-									 <?php echo get_field('suburb', $id); ?> - <?php echo get_field('country', $id); ?> <br />
-									 <?php if (get_field('telephone', $id)) { echo 'TEL : ' . get_field('telephone', $id);} ?>
-									 <?php if (get_field('telephone', $id) && get_field('fax', $id)) { echo ' - ';} ?>
-									 <?php if (get_field('fax', $id)) { echo 'FAX : ' . get_field('fax', $id);} ?><br />
-									<?php if (get_field('email', $id)) { echo '<a href="' . get_field('email', $id) . '">' . get_field('email', $id) . '</a>';} ?>
-									</p>
+<p>
+
+    <?php $address = get_field('address', $id); ?>
+    <?php $postcode = get_field('postcode', $id); ?>
+    <?php $telephone = get_field('telephone', $id); ?>
+    <?php $email = get_field('email', $id); ?>
+    <?php $fax = get_field('fax', $id); ?>
+
+
+	<?php if ($address) { echo $address  . ', ';} ?>
+	<?php if ($postcode) { echo $postcode; } ?>
+	 <?php echo get_field('suburb', $id); ?> - <?php echo get_field('country', $id); ?> <br />
+     <?php if ($telephone) { echo 'TEL : <a href="tel:' . $telephone . '">'. $telephone.'</a>' ;} ?>
+     <?php if ($telephone && $fax) { echo ' - ';} ?>
+     <?php if ($fax) { echo 'FAX : <a href="tel:' . $fax . '">'. $fax.'</a>'; }; ?><br />
+     <?php if ($email) { echo '<a href="mailto:' . $email . '">' . $email . '</a>';} ?>
+	</p>
 								</div>
 
 						</li>
@@ -193,10 +213,15 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 						<div class="profile_details">
 								<h2><?php echo get_field('function', $id); ?></h2>
 								<p>
-									 <?php if (get_field('telephone', $id)) { echo 'TEL : ' . get_field('telephone', $id);} ?>
-									 <?php if (get_field('telephone', $id) && get_field('fax', $id)) { echo ' - ';} ?>
-									 <?php if (get_field('fax', $id)) { echo 'FAX : ' . get_field('fax', $id);} ?><br />
-									<?php if (get_field('email', $id)) { echo '<a href="' . get_field('email', $id) . '">' . get_field('email', $id) . '</a>';} ?>
+<?php $telephone = get_field('telephone', $id); ?>
+<?php $email = get_field('email', $id); ?>
+<?php $fax = get_field('fax', $id); ?>
+
+
+<?php if ($telephone) { echo 'TEL : <a href="tel:' . $telephone . '">'. $telephone.'</a>' ;} ?>
+<?php if ($telephone && $fax) { echo ' - ';} ?>
+<?php if ($fax) { echo 'FAX : <a href="tel:' . $fax . '">'. $fax.'</a>'; }; ?><br />
+<?php if ($email) { echo '<a href="mailto:' . $email . '">' . $email . '</a>';} ?>
 									</p>
 								</div>
 							</li>
@@ -223,9 +248,17 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 		<div class="profile_details">
 			<h2><?php the_title(); ?></h2>
 			<p>
-			<?php if (get_field('telephone', $post_id)) { echo '&#9743; Tel: ' . get_field('telephone', $post_id) .  ' <br>';} ?>
-			<?php if (get_field('mobile', $post_id)) { echo '&#9990;	 Mobile: ' . get_field('mobile', $post_id) .  ' <br>';} ?>
-			<?php if (get_field('email', $post_id)) { echo '&#9993; Email: ' . get_field('email', $post_id) .  ' <br>';} ?>
+
+    <?php
+    $telephone = get_field('telephone', $post_id);
+    $mobile = get_field('mobile', $post_id);
+    $email = get_field('email', $post_id);
+     ?>
+    <?php if ($telephone) { echo '&#9743; Tel: <a href="tel:'. $telephone.'">' . $telephone .  '</a> <br>';} ?>
+    <?php if ($mobile) { echo '&#9990;	 Mobile: <a href="tel:'. $mobile.'">' . $mobile .  '</a> <br>';} ?>
+    <?php if ($email) { echo '&#9993; Email: <a href="mailto:' . $email . '">' . $email .  '</a> <br>';} ?>
+
+
 
 			</p>
 		</div>

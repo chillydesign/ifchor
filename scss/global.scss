@@ -52,6 +52,26 @@ section.section_colonnes + section.section_colonnes, section.section_two_thirds_
 	padding-top: 0;
 }
 
+.pagination {
+    margin:0 0 10px;
+    .page-numbers {
+        display: inline-block;
+        border:1px solid $light_grey;
+        padding: 8px;
+        margin:0 5px 10px 0;
+        font-size: 1.5em;
+
+        &.current {
+            background-color: $light_grey;
+        }
+
+        &:hover {
+            background-color: $light_grey;
+        }
+    }
+}
+
+
 @import 'sections/top_section';
 @import 'sections/page_title';
 @import 'sections/photo_slide';

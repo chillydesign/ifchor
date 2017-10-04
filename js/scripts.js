@@ -105,9 +105,42 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
         });
 
             $('#navigation_menu > ul >  li').on('click', function(e){
-
                 e.stopPropagation();
             })
+
+
+
+            // if clicking on customsub link, and its linking to an id
+            // and that id is on the page
+            $('.custom-sub a').on('click', function(e){
+
+        		var $this = $(this);
+        		var $href = $this.attr('href');
+        		var $hash = $href.split('#')[1];
+
+        		if (typeof $hash !== 'undefined') {
+        			var $location = $('#' + $hash);
+        			if($location.length  > 0) {
+                        e.preventDefault();
+        				$("html, body").animate({ scrollTop: $location.offset().top }, 1000);
+        			}
+        		}
+        	});
+
+
+
+            // if coming to a new page, and there is a hash in the url
+            var $page_hash = window.location  .hash;
+            $page_hash =  $page_hash.split('#')[1];
+            if (typeof $page_hash !== 'undefined') {
+                var $page_location = $('#' + $page_hash);
+                if($page_location.length  > 0) {
+                    window.scrollTo(0,0);
+                    $("html, body").animate({ scrollTop: $page_location.offset().top }, 1000);
+                }
+            }
+
+
 
 
 
