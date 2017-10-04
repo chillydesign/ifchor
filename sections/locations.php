@@ -19,7 +19,7 @@
                 Building 3 (4th Floor)<br />
                 14561 Kifissia, Athens<br />
                 + 30 210 6859799<br />
-                <a href="#">Google Maps</a><br />
+                <a href="https://www.google.co.uk/maps/search/Kifissias+Avenue+225-227,+Kifissia,+Greece/@38.0646857,23.8062773,17z" target="_blank">Google Maps</a><br />
 
             </p>
             <a href="#" class="close_location_box">X</a>
@@ -94,6 +94,11 @@
                 </div>
                 <div class="location_box_italy_1_ location_box">
                     <h3>Italy</h3>
+                    <p>
+                      Via G. D'Annunzio 2/101<br />
+                      Genova, 16122<br />
+
+                    </p>
                     <p><a href="#">Google Maps</a></p>
                     <a href="#" class="close_location_box">X</a>
                 </div>

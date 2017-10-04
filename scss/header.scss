@@ -211,6 +211,10 @@ nav#navigation_menu {
 }
 
 @media (min-width:1200px){
+  .current-menu-ancestor .custom-sub, .current-menu-ancestor .custom-sub {
+    display: block!important;
+}
+
   nav#navigation_menu > ul {
     padding-right: 25px;
 }
