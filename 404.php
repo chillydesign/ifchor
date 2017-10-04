@@ -9,7 +9,7 @@
         					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'webfactor' ); ?></a>
         				</p>
                     </div>
-                    <div class="parallax photo_slide " style="background-image: url('https://webfactor.ch/projets/ifchor4/wp-content/uploads/2017/06/drybulk1.jpg');"></div>
+                    <div class="parallax photo_slide " style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2017/06/drybulk1.jpg');"></div>
                     <div class="photo_gradient"></div>
             </div>
             </section>
