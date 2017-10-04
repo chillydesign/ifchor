@@ -89,19 +89,17 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 	 <ul class="people row">
 	 	<?php $post_count = 1; ?>
 		<?php $firstletter = ""; ?>
-
-
-<?php $letters = array('A'=>false, 'B'=>false, 'C'=>false, 'D'=>false, 'E'=>false, 'F'=>false, 'H'=>false, 'I'=>false, 'J'=>false, 'K'=>false, 'L'=>false, 'M'=>false, 'N'=>false, 'O'=>false, 'P'=>false, 'Q'=>false, 'R'=>false, 'S'=>false, 'T'=>false, 'U'=>false, 'V'=>false, 'W'=>false, 'X'=>false, 'Y'=>false, 'Z'=>false); ?>
+        <?php $letters = array('A'=>false, 'B'=>false, 'C'=>false, 'D'=>false, 'E'=>false, 'F'=>false, 'G' =>false , 'H'=>false, 'I'=>false, 'J'=>false, 'K'=>false, 'L'=>false, 'M'=>false, 'N'=>false, 'O'=>false, 'P'=>false, 'Q'=>false, 'R'=>false, 'S'=>false, 'T'=>false, 'U'=>false, 'V'=>false, 'W'=>false, 'X'=>false, 'Y'=>false, 'Z'=>false); ?>
 
 
 
 		<?php $args = array(
-		'post_type' => 'person',
-		'posts_per_page' => -1,
-		'meta_key'			=> 'surname',
-		'orderby'			=> 'meta_value',
-		'order'				=> 'ASC'
-	);
+    		'post_type' => 'person',
+    		'posts_per_page' => -1,
+    		'meta_key'			=> 'surname',
+    		'orderby'			=> 'meta_value',
+    		'order'				=> 'ASC'
+	       );
 		query_posts($args); while (have_posts()) : the_post(); ?>
 		<?php $old_firstletter = $firstletter ?>
 		<?php $surname = get_field('surname'); ?>
@@ -110,7 +108,6 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 		<?php if($firstletter != $old_firstletter){
 			$post_count = 1;
 			echo '</ul><div class="people_letter" id="' . $firstletter .'">' . $firstletter . '</div><ul class="people row">';
-
 			$letters[$firstletter]=true;
 
 		} ?>
