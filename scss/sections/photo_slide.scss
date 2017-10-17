@@ -118,6 +118,13 @@ overflow: hidden;
   }
   .home .section_photo_slide .photo_slide_container{
     height: 300px;
-    h1 {display: block;}
+    h1 {
+      display: block;
+      font-size: 3em;
+      background: none;
+      color: white;
+      position: relative;
+      top: 70px;
+    }
   }
 }
