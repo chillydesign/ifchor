@@ -1,7 +1,15 @@
 $picture_width: 80px;
 
+.office_list.office_list_0 {
+    background: #f7f7f7;
+}
+section.section.section_contacts {
+    padding-bottom: 0;
+}
+
 div.office_list {
-  margin: 20px 0 50px;
+    margin: 0;
+    padding: 40px 0 10px;
 }
 
 ul.city {
@@ -92,7 +100,7 @@ ul.city {
 
 .contact_list {
     position: relative;
-    top: 90px; 
+    top: 90px;
 }
 
 .contacts_az {
@@ -103,7 +111,7 @@ ul.city {
 // FOR THE CITY NAME, AND FLAG
 ul.city {
     font-size: 140%;
-    margin: 0;
+    margin: 0 0 20px;
     li.person {
         width: 100%;
     }

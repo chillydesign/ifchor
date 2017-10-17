@@ -29,6 +29,9 @@ body {
 	width: 100%;
 	height:300px;
 }
+.one_third_image img {
+    margin-top: 6px;
+}
 
 .single_post {
 	margin:0 0 40px;
@@ -46,6 +49,9 @@ section {
 	position: relative;
 	width: 100%;
 
+}
+@media(max-width:650px){
+	section  {padding: 20px 0;}
 }
 
 section.section_colonnes + section.section_colonnes, section.section_two_thirds_one_third + section.section_colonnes, section.colonnes + section.section_two_thirds_one_third {
@@ -71,6 +77,15 @@ section.section_colonnes + section.section_colonnes, section.section_two_thirds_
     }
 }
 
+
+.encadre {
+    border: solid 2px #555;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+p + .encadre {margin-top: 20px;}
+.encadre + p {margin-top: 30px;}
 
 @import 'sections/top_section';
 @import 'sections/page_title';

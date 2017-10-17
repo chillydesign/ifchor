@@ -10,9 +10,12 @@ h2 {font-size: 2.9em; padding: 0 0 20px;font-weight: bold}
 h3 {font-size: 2.21em;padding:0 0 20px;}
 h4 {font-size: 1.4em;padding:0 0 10px;font-weight: bold;}
 
+p + h2, ul + h2 {
+    margin-top: 40px;
+}
 
 @media (min-width: 768px){
-	h1 {font-size: 3.5em;}
+	h1 {font-size: 4.3em;}
 	h2 {font-size: 3.1em}
 	h3 {font-size: 2.41em}
 	h4 {font-size: 1.79em}
@@ -35,7 +38,7 @@ h1 span {
 
 p {
 	font-size: $font_size;
-	padding:0 0 30px;
+	padding:0 0 10px;
 	line-height: 160%;
 }
 li { font-size: $font_size;
@@ -45,7 +48,6 @@ li { font-size: $font_size;
 
 ul {
 	list-style: disc;
-	margin:0 30px 10px 30px;
 	padding:0 20px 0 20px;
 }
 ol {
@@ -58,7 +60,7 @@ li li, li p {font-size: inherit;}
 ul ul , ul ol, ol ol {font-size: inherit}
 
 p + ul {
-    margin-top: -30px;
+    margin-top: -5px;
 }
 
 
@@ -78,6 +80,21 @@ a {
 	}
 	&:hover {
 	}
+}
+
+h6 a, a h6 {
+    background: #25204c;
+    color: #ffe036!important;
+    padding: 10px 15px;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 10px 0 0px;
+		border: 0;
+}
+
+h6 a:hover, a:hover h6 {
+	background: #ffe036;
+  color: #25204c!important;
 }
 
 
@@ -107,22 +124,20 @@ table {
 th, td {font-size: 1.5em;padding:10px;border:0}
 section td {font-size: 2em;line-height: 160%;padding:0 0 10px;}
 
-blockquote {
-	padding:20px 0 20px 40px;
-	border-left:4px solid #888;
-	margin:40px 20px 40px 40px;
-	font-size: 140%;
-	font-style: italic;
-	max-width: 900px;
-}
-blockquote p:last-child {padding-bottom: 0}
-
 input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;}
 
 img {
 	max-width: 100%;
 	width: 100%;
 	height: auto;
+}
+@media(max-width:766px){
+	img {
+		max-width: calc(100% + 30px);
+		width: calc(100% + 30px);
+		margin: 0 -15px;
+		height: auto;
+	}
 }
 
 div.wp-caption {

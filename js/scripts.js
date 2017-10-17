@@ -104,6 +104,18 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
         });
 
+        $('#navigation_menu > ul >  li > a').on('hover', function(e){
+                console.log('boop');
+                var $this = $(this);
+                var $parent = $this.parent();
+                var $has_clicked_class =  ($parent.hasClass('clicked'));
+                $('#navigation_menu > ul >  li').removeClass('clicked');
+                if ($has_clicked_class == false) {
+                    $parent.addClass('clicked');
+                }
+
+        });
+
             $('#navigation_menu > ul >  li').on('click', function(e){
                 e.stopPropagation();
             })
@@ -130,7 +142,7 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
 
             // if coming to a new page, and there is a hash in the url
-            var $page_hash = window.location  .hash;
+            var $page_hash = window.location.hash;
             $page_hash =  $page_hash.split('#')[1];
             if (typeof $page_hash !== 'undefined') {
                 var $page_location = $('#' + $page_hash);
@@ -212,7 +224,24 @@ import slickcarousel from '../node_modules/slick-carousel/slick/slick.js';
 
 
 
+        $('nav#navigation_menu li.menu-item-has-children a').on('click', function(){
+          var $this = $(this).parent('nav#navigation_menu li.menu-item-has-children');
+          if(  $window.width() < 992){
+              if($this.hasClass('active_li_in_nav')){
+                  $this.find('.custom-sub').slideUp();
+                  $this.removeClass('active_li_in_nav');
+              } else{
+                  $('.active_li_in_nav .custom-sub').slideUp();
+                  $this.find('.custom-sub').slideDown();
+                  $('.active_li_in_nav').removeClass('active_li_in_nav');
+                  $this.addClass('active_li_in_nav');
+              }
+            }
+          });
+
+
     });
+
 
 })(jQuery, this);
 

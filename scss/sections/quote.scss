@@ -2,15 +2,22 @@ section.section.section_quote {
     background: #f7f7f7;
     border-top: solid 2px #eee;
     border-bottom: solid 2px #eee;
+    padding: 30px 0;
 }
 
 blockquote {
   width:100%;;
   border-left: 0;
-  margin: 10px;
-  padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
+	// padding:20px 0 20px 40px;
+	padding:0!important;
+	// margin:40px 20px 40px 40px;
+	margin:0!important;
+	font-style: italic;
+	max-width: 900px;
+  font-size: 140%;
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -21,4 +28,10 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+
+blockquote p:last-child {padding-bottom: 0}
+
+@media(min-width:775px){
+  blockquote {font-size: 200%;}
 }

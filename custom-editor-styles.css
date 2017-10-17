@@ -1,0 +1,6 @@
+.encadre {
+  display: block;
+  padding: 15px;
+  border: solid 1px #555;
+  background: #f6f6f6;
+}

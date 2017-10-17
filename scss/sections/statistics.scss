@@ -43,16 +43,18 @@
       // font-weight: bold;
       margin:0 0 30px;
       display: inline-block;
+      vertical-align: top;
     }
     .statistic_description {
       font-size: 2em;
+      line-height: 110%;
     }
   }
 
 }
 
 
-@media (min-width: 568px){
+@media (min-width: 700px){
 .statistics_list {
     font-size: 1em!important;
     .statistic {
@@ -60,4 +62,12 @@
     }
 }
 
+}
+
+@media(max-width:1000px){
+  .statistics_list .statistic .statistic_amount, .statistics_list .statistic .after_stat {
+     font-size: 4em;
+     margin: 0 0 15px;
+     display: inline-block;
+  }
 }
