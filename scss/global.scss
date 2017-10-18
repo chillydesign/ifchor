@@ -9,8 +9,8 @@
 @import 'footer';
 @import "people";
 
-@import '../node_modules/slick-carousel/slick/slick.scss';
-@import '../node_modules/slick-carousel/slick/slick-theme.scss';
+// @import '../node_modules/slick-carousel/slick/slick.scss';
+// @import '../node_modules/slick-carousel/slick/slick-theme.scss';
 
 
 body {
@@ -87,6 +87,7 @@ section.section_colonnes + section.section_colonnes, section.section_two_thirds_
 p + .encadre {margin-top: 20px;}
 .encadre + p {margin-top: 30px;}
 
+@import 'posts';
 @import 'sections/top_section';
 @import 'sections/page_title';
 @import 'sections/photo_slide';
@@ -96,3 +97,4 @@ p + .encadre {margin-top: 20px;}
 @import 'sections/locations';
 @import 'sections/quote';
 @import 'sections/languages';
+@import 'sections/posts_slider';

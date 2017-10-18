@@ -1,10 +1,17 @@
 <?php get_header(); ?>
 
+<section id="top_section">
+<h1>Latest Posts</h1>
+<div class=" photo_slide " style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2017/06/drybulk1.jpg');"></div>
+
+</section>
+
+
+
 
 		<!-- section -->
-		<section>
+		<section  class="container">
 
-			<h1><?php _e( 'Latest Posts', 'webfactor' ); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 
@@ -13,7 +20,5 @@
 		</section>
 		<!-- /section -->
 
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

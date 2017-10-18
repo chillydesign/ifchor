@@ -3,7 +3,7 @@
 
 
 
-    <section class="section_photo_slide" style="top:-30px">
+    <section class="section_photo_slide" style="top:-50px">
     <div class="photo_slide_container  photo_slide_size_small">
             <div class="photo_slide_content">
             <h1><?php echo __('Search Results for ', 'webfactor' ); ?> "<?php echo $_GET['s']; ?>"</h1>

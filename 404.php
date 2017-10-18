@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-            <section class="section_photo_slide" style="margin-top:-30px">
+            <section class="section_photo_slide" style="margin-top:-50px">
             <div class="photo_slide_container  photo_slide_size_large">
                     <div class="photo_slide_content">
                         <h1><?php _e( 'Page not found', 'webfactor' ); ?></h1>
