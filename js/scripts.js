@@ -23,7 +23,13 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
 
 
 
+        $('a.trigger_open').on('click', function(){
+          $('div.popup_form').show();
+        })
 
+        $('div.close').on('click', function(){
+          $('div.popup_form').hide();
+        })
 
         // $('.service_container').each(function(){
         //     $(this)
@@ -65,8 +71,8 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
 
         // posts slider on home page
         $('.posts_slider').bxSlider({
-            'controls': false,
-            'pager': true,
+            'controls': true,
+            'pager': false,
             'auto': true,
             'autoHover': true,
             'pause' : 7000,

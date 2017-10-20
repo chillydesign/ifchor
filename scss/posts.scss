@@ -2,11 +2,11 @@
     .single_post {
         margin-bottom: 50px;
 
-        .clearfix {
-            display: flex;
-        }
-    }
 
+    }
+.single_flex {
+  display: flex;
+}
 
 .post_image {
     border: 0;
@@ -52,4 +52,37 @@ $date_width: 76px;
 .post_text_container {
     float:left;
     flex:1;
+}
+
+
+.bx-wrapper {
+    position: relative;
+}
+
+.bx-controls-direction a {
+  text-indent: -9999px;
+  position: absolute;
+  top: calc(50% - 50px);
+  height: 40px;
+  width: 15px;
+  background: url(../img/arrow-left.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  border-bottom: 0;
+}
+
+.bx-controls-direction a.bx-next {
+  transform: rotate(180deg);
+  right: 0;
+}
+
+@media(max-width:775px){
+  .post_text_container h3 {
+      min-height: 90px;
+  }
+.single-content {
+  width: calc(100% + 101px);
+  margin-left: -101px;
+}
 }

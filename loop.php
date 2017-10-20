@@ -11,14 +11,14 @@
             <div class="row single_post">
                 <div class="col-sm-9">
 
-                    <div class="clearfix">
+                    <div class="clearfix single_flex">
                         <div class="date_container">
-                            <span class="day">6</span>
-                            <span class="month">Jul 17</span>
+                          <span class="day"><?php echo get_the_date('d'); ?></span>
+                          <span class="month"><?php echo get_the_date('M y'); ?></span>
                         </div>
                         <div class="post_text_container">
-                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                            <p><?php echo get_the_excerpt(); ?></p>
+                            <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+                            <div class="single-content"><p><?php echo get_the_excerpt(); ?></p></div>
                         </div>
                     </div>
 

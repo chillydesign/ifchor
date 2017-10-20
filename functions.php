@@ -88,7 +88,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.6.5 ';
+  return '0.0.6.7 ';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -250,7 +250,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'webfactor') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('Read more', 'webfactor') . '</a>';
 }
 
 // Remove Admin bar
@@ -797,5 +797,129 @@ function my_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-styles.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
+
+
+
+
+
+
+
+
+
+//Sendgrid
+
+add_shortcode( 'registration_form',  'registration_form_shortcode' );
+//  ADD REQUEST FORM AS A SHORTCODE
+function registration_form_shortcode($atts , $content = null) {
+  $rq_frm = '
+  <h6><a class="trigger_open" href="#">Sign up to Ifchor reports</a></h6>
+  <div class="popup_form">
+  <div class="container">
+  <form id="course_form" action="' .  esc_url( admin_url('admin-post.php') ) . '" method="post">
+  <h3>Sign up to Ifchor reports</h3>
+
+  <label for="first_name">First name</label>
+  <input type="text" name="last_name">
+
+  <label for="last_name">Last name</label>
+  <input type="text" name="last_name">
+
+  <label for="company">Company</label>
+  <input type="text" name="company">
+
+  <label for="position">Position</label>
+  <input type="text" name="position">
+
+  <label for="location">City - Country</label>
+  <input type="text" name="location">
+
+  <label for="email">Email</label>
+  <input type="email" name="email">
+
+  <label for="phone">Phone Number</label>
+  <input type="text" name="phone">
+
+  <p style="margin-bottom:-20px"><strong>Type of report requested</strong></p>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-quarterly">Dry Bulk: Quarterly Report</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-monthly">Dry Bulk: Monthly Fleet Net Change</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-panamax">Dry Bulk: Panamax Assessment</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-daily">Dry Bulk: Ifchor Daily Bulletin</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="wet-monthly">Wet: Monthly Fleet Net Change</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="wet-daily">Wet: Ifchor Tankers Market Daily Snapshot</label>
+
+  <label for="message" style="margin-top:40px">Message</label>
+  <textarea name="message"></textarea>
+
+  <input type="hidden" name="action" value="registration_form">
+    <div class="submit_group_button">
+    <input type="submit" id="submit_course_form" value="Submit">
+  </form>
+  <div class="close">x</div>
+  </div>
+  </div>
+  ';
+  return  $rq_frm;
+}
+
+
+// GET POSTED DATA FROM FORM
+// TO DO REMAME FUNCTION
+add_action( 'admin_post_nopriv_registration_form',    'process_registration_form'   );
+add_action( 'admin_post_registration_form',  'process_registration_form' );
+
+
+
+function process_registration_form() {
+
+    $referer = $_SERVER['HTTP_REFERER'];
+    $referer =  explode('?',   $referer)[0];
+
+    // IF DATA HAS BEEN POSTED
+    if ( isset($_POST['action'])  && $_POST['action'] == 'registration_form'   ) :
+
+
+      $first_name = $_POST['first_name'];
+      $last_name = $_POST['last_name'];
+      $company = $_POST['company'];
+      $position = $_POST['position'];
+      $location = $_POST['location'];
+      $email = $_POST['email'];
+      $reports = $_POST['reports'];
+      $phone = $_POST['phone'];
+      $message = $_POST['message'];
+
+
+      $email_body ='';
+      $email_body .= 'From : ' . $first_name . ' ' . $last_name . "<br>";
+      $email_body .= 'Company : ' . $company . "<br>";
+      $email_body .= 'Position : ' . $position . "<br>";
+      $email_body .= 'City, Country : ' . $location . "<br>";
+      $email_body .= 'Email : ' . $email . "<br>";
+      $email_body .= 'Phone : ' . $phone . "<br>";
+      $email_body .= 'Report requested : ' . $reports . "<br>";
+      $email_body .= 'Message : ' . $message . "<br>";
+
+
+      $subject = 'Subscription to the report : ' . $reports;
+      $to = array('melissa.rissel@webfactor.ch', 'reports@ifchor.com');
+
+      $headers = array();
+      $headers[] = 'From: Ifchor <report-subscriptions@ifchor.com>';
+      $headers[] = 'unique-args:customer=mycustomer;location=mylocation';
+      $headers[] = 'categories:' . $reports;
+      // $headers[] = 'template: templateID';
+      // $headers[] = 'x-smtpapi-to: address1@sendgrid.com,address2@sendgrid.com';
+
+
+      add_filter('wp_mail_content_type', 'set_html_content_type');
+      $mail = wp_mail($to, $subject, $email_body, $headers, $attachments);
+
+      remove_filter('wp_mail_content_type', 'set_html_content_type');
+
+
+      wp_redirect( $referer . '?success' );
+    endif;
+}
+
 
 ?>

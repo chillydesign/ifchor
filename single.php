@@ -6,23 +6,32 @@
 
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<section class="section_photo_slide" style="margin-top:-50px">
+							<div class="photo_slide_content">
+									<h1>Ifchor News</h1>
+							</div>
+							<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+								<?php $image = thumbnail_of_post_url(get_the_ID(), 'full'); ?>
+							<?php else:
+								$image = get_home_url() . '/wp-content/uploads/2017/06/drybulk1.jpg';
 
-			<section id="top_section">
-				<h1><?php the_title(); ?></h1>
-				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<?php $image = thumbnail_of_post_url(get_the_ID(), 'full'); ?>
-				<div class=" photo_slide " style="background-image: url(<?php echo $image; ?>);"></div>
-				<?php endif; ?>
+							endif; ?>
+							<div class="parallax photo_slide " style="background-image: url('<?php echo $image; ?>');"></div>
+							<div class="photo_gradient"></div>
 			</section>
 
 			<section class="container">
 
-
-
-			<p class="meta"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></p>
-
-
-			<?php the_content(); // Dynamic Content ?>
+				<div class="clearfix single_flex">
+					<div class="date_container">
+						<span class="day"><?php echo get_the_date('d'); ?></span>
+						<span class="month"><?php echo get_the_date('M y'); ?></span>
+					</div>
+					<div class="post_text_container">
+						<h3><?php the_title(); ?></h3>
+						<div class="single-content"><?php the_content(); ?></div>
+					</div>
+				</div>
 
 
 

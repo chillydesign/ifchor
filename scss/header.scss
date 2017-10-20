@@ -1,6 +1,6 @@
 
 
-body {padding-top: 124px;}
+body {padding-top: 80px;}
 body.home {
     padding-top: 80px;
 }
@@ -162,6 +162,7 @@ nav#navigation_menu {
       .custom-sub{
         max-width: 100%;
         margin: auto;
+        text-align: center;
 
         ul.sub-menu{
           max-width: 100%;
@@ -286,15 +287,13 @@ nav#navigation_menu {
               padding: 10px 18px!important;
               color: $primary_color!important;
 
-            &:hover {
-                background-color: darken(#ffe135, 15);
-                background-color: $font_color;
+            &:hover, &:focus {
+                // background-color: darken(#ffe135, 15);
+                // background-color: $font_color;
+                color: $font_color!important;
+                font-weight: bold!important;
+                transform: scale(1.1);
             }
-
-              &:hover, &:focus{
-                color: black!important;
-                color: $yellow!important;
-              }
             }
           }
 
@@ -314,18 +313,17 @@ nav#navigation_menu {
 
 
       }
+      li.clicked {background: $yellow;}
       li.clicked a{
-        background-color: darken($primary_color,10);
-        background-color: $yellow;
+        // background-color: darken($primary_color,10);
+        // background-color: $yellow;
         color: $font_color;
       }
       li.current-menu-ancestor > a, li.current-menu-parent > a{
         color: $yellow;
-        text-decoration: underline;
       }
       li.current-menu-item a {
         font-weight: bold!important;
-        text-decoration: underline!important;
       }
       li.current-menu-ancestor.clicked a, li.current-menu-parent.clicked a{
         color: $font_color;

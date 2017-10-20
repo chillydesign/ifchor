@@ -1,5 +1,7 @@
 .section_posts_slider {
-    background-color: #f1f1f1;
+    background-color: #f7f7f7;
+    border-top: 5px solid #eee;
+    border-bottom: 5px solid #eee;
     margin-top: 50px;
 
     ul {
@@ -14,7 +16,7 @@
             }
 
             h3 {
-                font-size: 1.4em;
+                font-size: 1.2em;
 
                 a {
                     border: 0;
@@ -22,6 +24,10 @@
                 }
             }
         }
+    }
+    .date_container {
+      span.day{font-size: 2em;}
+      span.month{font-size: 1em;}
     }
 }
 
@@ -50,4 +56,9 @@
         }
     }
 
+}
+
+a.view-article {
+    font-style: italic;
+    border-bottom: 0;
 }
