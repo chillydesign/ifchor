@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div style="width:80%;margin:0 10%;position:relative">
+    <div class="locations_map_container">
         <?php include 'locations_map3.svg'; ?>
 
 

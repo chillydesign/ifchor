@@ -7,6 +7,21 @@ svg {
   fill:$primary_color;
 }
 
+
+.locations_map_container {
+    position:relative    ;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .locations_map_container {
+        width:80%;
+        margin:0 10%;
+    }
+
+}
+
+
 // circle {
 //    animation: scaleinout 1.5s ease-in-out infinite alternate;
 //    transform-origin: 50% 50%;

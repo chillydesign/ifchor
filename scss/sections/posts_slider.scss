@@ -26,10 +26,20 @@
         }
     }
     .date_container {
-      span.day{font-size: 2em;}
-      span.month{font-size: 1em;}
+
+      span.day{font-size: 1.3em;padding:7px 0}
+      span.month{font-size: 0.6em;padding:2px 0;}
     }
 }
+
+  @media (min-width: 768px) {
+.section_posts_slider {
+    .date_container {
+        span.day{font-size: 2em;padding:10px 0;}
+        span.month{font-size: 1em;padding:8px 0}
+    }
+}
+  }
 
 
 .bx-pager {
