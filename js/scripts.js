@@ -32,14 +32,15 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
         })
 
         $('.accordeon').on('click', function(){
+          console.log('boop');
           var $this = $(this);
           if($this.hasClass('clicked')){
-            $this.child('ul').slideUp();
+            $this.find('ul').slideUp();
             $this.removeClass('clicked');
           } else {
             $('.clicked ul').slideUp();
             $('.clicked').removeClass('clicked');
-            $this.child('ul').slideDown();
+            $this.find('ul').slideDown();
             $this.addClass('clicked');
           }
         })
