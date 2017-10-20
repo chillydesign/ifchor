@@ -782,6 +782,13 @@ function my_mce_before_init_insert_formats( $init_array ) {
             'classes' => 'encadre',
             'wrapper' => true,
 
+        ),
+        array(
+            'title' => 'Accordéon',
+            'block' => 'div',
+            'classes' => 'accordeon',
+            'wrapper' => true,
+
         )
     );
     // Insert the array, JSON ENCODED, into 'style_formats'
@@ -819,7 +826,7 @@ function registration_form_shortcode($atts , $content = null) {
   <h3>Sign up to Ifchor reports</h3>
 
   <label for="first_name">First name</label>
-  <input type="text" name="last_name">
+  <input type="text" name="first_name">
 
   <label for="last_name">Last name</label>
   <input type="text" name="last_name">
@@ -840,12 +847,12 @@ function registration_form_shortcode($atts , $content = null) {
   <input type="text" name="phone">
 
   <p style="margin-bottom:-20px"><strong>Type of report requested</strong></p>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-quarterly">Dry Bulk: Quarterly Report</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-monthly">Dry Bulk: Monthly Fleet Net Change</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-panamax">Dry Bulk: Panamax Assessment</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="dry_bulk-daily">Dry Bulk: Ifchor Daily Bulletin</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="wet-monthly">Wet: Monthly Fleet Net Change</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="wet-daily">Wet: Ifchor Tankers Market Daily Snapshot</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Quarterly Report">Dry Bulk: Quarterly Report</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Monthly Fleet Net Change">Dry Bulk: Monthly Fleet Net Change</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Panamax Assessment">Dry Bulk: Panamax Assessment</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Ifchor Daily Bulletin">Dry Bulk: Ifchor Daily Bulletin</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Wet: Monthly Fleet Net Change">Wet: Monthly Fleet Net Change</label>
+    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Wet: Ifchor Tankers Market Daily Snapshot">Wet: Ifchor Tankers Market Daily Snapshot</label>
 
   <label for="message" style="margin-top:40px">Message</label>
   <textarea name="message"></textarea>
@@ -889,30 +896,36 @@ function process_registration_form() {
       $message = $_POST['message'];
 
 
-      $email_body ='';
-      $email_body .= 'From : ' . $first_name . ' ' . $last_name . "<br>";
-      $email_body .= 'Company : ' . $company . "<br>";
-      $email_body .= 'Position : ' . $position . "<br>";
-      $email_body .= 'City, Country : ' . $location . "<br>";
-      $email_body .= 'Email : ' . $email . "<br>";
-      $email_body .= 'Phone : ' . $phone . "<br>";
-      $email_body .= 'Report requested : ' . $reports . "<br>";
-      $email_body .= 'Message : ' . $message . "<br>";
+      $email_body = '';
+      $email_body .= '<p><strong>From</strong> : ' . $first_name . ' ' . $last_name . "</p>";
+      $email_body .= '<p><strong>Company</strong> : ' . $company . "</p>";
+      $email_body .= '<p><strong>Position</strong> : ' . $position . "</p>";
+      $email_body .= '<p><strong>City, Country</strong>: ' . $location . "</p>";
+      $email_body .= '<p><strong>Email</strong> : ' . $email . "</p>";
+      $email_body .= '<p><strong>Phone</strong> : ' . $phone . "</p>";
+      $email_body .= '<p><strong>Report requested</strong> : ' .  implode(', ', $reports) . "</p>";
+      $email_body .= '<p><strong>Message</strong> : ' . $message . "</p>";
+
+      $email_header = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
+      $email_footer = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
+      $email_content =  $email_header . $email_body . $email_footer;
 
 
-      $subject = 'Subscription to the report : ' . $reports;
-      $to = array('melissa.rissel@webfactor.ch', 'reports@ifchor.com');
+
+
+      $subject = 'Subscription to Ifchor report';
+      $to = array('melissa.rissel@webfactor.ch'); //, 'reports@ifchor.com'
 
       $headers = array();
       $headers[] = 'From: Ifchor <report-subscriptions@ifchor.com>';
       $headers[] = 'unique-args:customer=mycustomer;location=mylocation';
-      $headers[] = 'categories:' . $reports;
+      $headers[] = 'categories:' . implode(', ', $reports);
       // $headers[] = 'template: templateID';
       // $headers[] = 'x-smtpapi-to: address1@sendgrid.com,address2@sendgrid.com';
 
 
       add_filter('wp_mail_content_type', 'set_html_content_type');
-      $mail = wp_mail($to, $subject, $email_body, $headers, $attachments);
+      $mail = wp_mail($to, $subject, $email_content, $headers, $attachments);
 
       remove_filter('wp_mail_content_type', 'set_html_content_type');
 

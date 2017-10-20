@@ -179,7 +179,7 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]:checked {
-    background: $font_color;
+    background: $yellow;
 }
 
 input#submit_course_form {
@@ -189,7 +189,7 @@ input#submit_course_form {
     transition: all 0.5s;
 }
 input#submit_course_form:hover {
-    background: black;
+    background: $yellow;
 }
 textarea {
     display: block;
