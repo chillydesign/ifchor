@@ -31,6 +31,19 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
           $('div.popup_form').hide();
         })
 
+        $('.accordeon').on('click', function(){
+          var $this = $(this);
+          if($this.hasClass('clicked')){
+            $this.child('ul').slideUp();
+            $this.removeClass('clicked');
+          } else {
+            $('.clicked ul').slideUp();
+            $('.clicked').removeClass('clicked');
+            $this.child('ul').slideDown();
+            $this.addClass('clicked');
+          }
+        })
+
         // $('.service_container').each(function(){
         //     $(this)
         // });
