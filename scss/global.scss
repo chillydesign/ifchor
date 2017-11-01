@@ -22,6 +22,7 @@ body {
 	overflow-x: hidden;
 }
 
+.allbutfooter {min-height: calc(100vh - 92px);}
 
 .image_from_background {
 	background-repeat: no-repeat;
@@ -32,6 +33,10 @@ body {
 }
 .one_third_image img {
     margin-top: 6px;
+}
+
+img.half_width {
+	max-width: 50%; display: block; margin: auto;
 }
 
 .single_post {

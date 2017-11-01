@@ -1,6 +1,6 @@
 
 
-body {padding-top: 80px;}
+body {padding-top: 80px; max-width: 100vw; overflow-x: hidden;}
 body.home {
     padding-top: 80px;
 }
@@ -9,6 +9,8 @@ body.home {
 header {
   position: fixed;
   top:0;
+  left:0;
+  right:0;
   width: 100%;
   z-index: 200;
   background: $primary_color;
@@ -139,7 +141,6 @@ nav#navigation_menu {
         border-bottom:0;
 
         &.hovered {
-              background-color: transparentize($font_color, 0.1);
               color: white;
         }
 
@@ -359,4 +360,8 @@ nav#navigation_menu {
 body.body_fixed {
     height: 100vh;
     overflow: hidden;
+}
+
+input#header_s:focus {
+    outline: 0;
 }

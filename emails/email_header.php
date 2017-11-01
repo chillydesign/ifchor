@@ -131,7 +131,7 @@
                 <tr>
 					<td bgcolor="#ffffff" align="center">
 
-                        <a href="https://ifchor.com" target="_blank"><img src="https://webfactor.ch/projets/ifchor4/wp-content/themes/ifchor/img/ifchor_email_header.jpg" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
+                        <a href="https://ifchor.com" target="_blank"><img src="https://ifchor.com/wp-content/themes/ifchor/img/ifchor_email_header.jpg" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
 						</a>
 					</td>
                 </tr>

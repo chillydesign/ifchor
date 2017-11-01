@@ -88,7 +88,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.6.8 ';
+  return '0.0.7.4 ';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -394,40 +394,40 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 	Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-add_action('init', 'create_post_type_supermenu'); // Add our Supermenu Type
-function create_post_type_supermenu()
-{
-
-    register_post_type('supermenu', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Supermenu', 'webfactor'), // Rename these to suit
-            'singular_name' => __('Supermenu', 'webfactor'),
-            'add_new' => __('Add new', 'webfactor'),
-            'add_new_item' => __('Add new supermenu', 'webfactor'),
-            'edit' => __('Edit', 'webfactor'),
-            'edit_item' => __('Edit supermenu', 'webfactor'),
-            'new_item' => __('New supermenu', 'webfactor'),
-            'view' => __('View supermenu', 'webfactor'),
-            'view_item' => __('View supermenu', 'webfactor'),
-            'search_items' => __('Search supermenu', 'webfactor'),
-            'not_found' => __('No supermenus found', 'webfactor'),
-            'not_found_in_trash' => __('No supermenus found in Trash', 'webfactor')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'exclude_from_search' => true,
-        'supports' => array(
-            'title'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-
-        ) // Add Category and Post Tags support
-    ));
-}
+// // Create 1 Custom Post type for a Demo, called HTML5-Blank
+// add_action('init', 'create_post_type_supermenu'); // Add our Supermenu Type
+// function create_post_type_supermenu()
+// {
+//
+//     register_post_type('supermenu', // Register Custom Post Type
+//         array(
+//         'labels' => array(
+//             'name' => __('Supermenu', 'webfactor'), // Rename these to suit
+//             'singular_name' => __('Supermenu', 'webfactor'),
+//             'add_new' => __('Add new', 'webfactor'),
+//             'add_new_item' => __('Add new supermenu', 'webfactor'),
+//             'edit' => __('Edit', 'webfactor'),
+//             'edit_item' => __('Edit supermenu', 'webfactor'),
+//             'new_item' => __('New supermenu', 'webfactor'),
+//             'view' => __('View supermenu', 'webfactor'),
+//             'view_item' => __('View supermenu', 'webfactor'),
+//             'search_items' => __('Search supermenu', 'webfactor'),
+//             'not_found' => __('No supermenus found', 'webfactor'),
+//             'not_found_in_trash' => __('No supermenus found in Trash', 'webfactor')
+//         ),
+//         'public' => true,
+//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+//         'has_archive' => true,
+//         'exclude_from_search' => true,
+//         'supports' => array(
+//             'title'
+//         ), // Go to Dashboard Custom HTML5 Blank post for supports
+//         'can_export' => true, // Allows export in Tools > Export
+//         'taxonomies' => array(
+//
+//         ) // Add Category and Post Tags support
+//     ));
+// }
 
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
@@ -489,7 +489,7 @@ function create_post_type_person()
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
-        'exclude_from_search' => true,
+        'exclude_from_search' => false,
         'supports' => array(
             'title',
             'thumbnail'
@@ -777,14 +777,14 @@ function my_mce_before_init_insert_formats( $init_array ) {
 * Wrapper whether or not to add a new block-level element around any selected elements
 */
         array(
-            'title' => 'Encadré',
+            'title' => 'Grey box',
             'block' => 'div',
             'classes' => 'encadre',
             'wrapper' => true,
 
         ),
         array(
-            'title' => 'Accordéon',
+            'title' => 'Accordion',
             'block' => 'div',
             'classes' => 'accordeon',
             'wrapper' => true,
@@ -819,11 +819,11 @@ add_shortcode( 'registration_form',  'registration_form_shortcode' );
 //  ADD REQUEST FORM AS A SHORTCODE
 function registration_form_shortcode($atts , $content = null) {
   $rq_frm = '
-  <h6><a class="trigger_open" href="#">Sign up to Ifchor reports</a></h6>
+  <h6><a class="trigger_open" href="#">Sign up to request Ifchor reports</a></h6>
   <div class="popup_form">
   <div class="container">
   <form id="course_form" action="' .  esc_url( admin_url('admin-post.php') ) . '" method="post">
-  <h3>Sign up to Ifchor reports</h3>
+  <h3>Sign up to request Ifchor reports</h3>
 
   <label for="first_name">First name</label>
   <input type="text" name="first_name">
@@ -914,7 +914,7 @@ function process_registration_form() {
 
 
       $subject = 'Subscription to Ifchor report';
-      $to = array('melissa.rissel@webfactor.ch'); //, 'reports@ifchor.com'
+      $to = array('reports@ifchor.com');
 
       $headers = array();
       $headers[] = 'From: Ifchor <report-subscriptions@ifchor.com>';

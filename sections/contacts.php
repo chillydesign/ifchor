@@ -198,12 +198,15 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 	<div class="container">
 			<ul class="people city">
 				<li class="person">
-					<div class="profile_picture">
-						<div class="image_from_background" style="background-image: url('<?php echo get_field('flag', $id)['url']; ?>"></div>
-					</div>
+						<?php if(get_field('flag', $id)){ ?>
+							<div class="profile_picture">
+								<div class="image_from_background" style="background-image: url('<?php echo get_field('flag', $id)['url']; ?>"></div>
+							</div>
+						<?php } ?>
+
 					<div class="profile_details">
 						<h2><?php echo get_field('function', $id); ?></h2>
-						<p>
+
 							<?php $address = get_field('address', $id); ?>
 							<?php $postcode = get_field('postcode', $id); ?>
 							<?php $telephone = get_field('telephone', $id); ?>
@@ -211,12 +214,17 @@ query_posts($args); while (have_posts()) : the_post(); ?>
 							<?php $email2 = get_field('email2', $id); ?>
 							<?php $fax = get_field('fax', $id); ?>
 
+						<p>
 							<?php if ($address) { echo $address  . ', ';} ?>
 							<?php if ($postcode) { echo $postcode; } ?>
-							<?php echo get_field('suburb', $id); ?> - <?php echo get_field('country', $id); ?> <br />
+							<?php echo get_field('suburb', $id); ?>
+							<?php if(get_field('suburb', $id) OR get_field('country', $id)){ echo ' - ';} ?>
+							<?php echo get_field('country', $id); ?>
+							<?php if($address OR $postcode){ echo '<br>';} ?>
 							<?php if ($telephone) { echo 'TEL : <a href="tel:' . $telephone . '">'. $telephone.'</a>' ;} ?>
 							<?php if ($telephone && $fax) { echo ' - ';} ?>
-							<?php if ($fax) { echo 'FAX : <a href="tel:' . $fax . '">'. $fax.'</a>'; }; ?><br />
+							<?php if ($fax) { echo 'FAX : <a href="tel:' . $fax . '">'. $fax.'</a>'; }; ?>
+							<?php if($telephone OR $fax){ echo '<br>';} ?>
 							<?php if ($email) { echo '<a href="mailto:' . $email . '">' . $email . '</a>';} ?>
 							<?php if ($email2) { echo ' - <a href="mailto:' . $email2 . '">' . $email2 . '</a>';} ?>
 						</p>

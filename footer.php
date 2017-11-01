@@ -1,3 +1,5 @@
+			</div>
+			<!-- End of allbutfooter -->
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 

@@ -27,7 +27,7 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-
+<div class="allbutfooter">
 
 			<header class="header" id="header">
 				<div class="container">
