@@ -503,6 +503,85 @@ function create_post_type_person()
 
 
 
+add_action('init', 'create_post_type_vacancy'); // Add our Vacancy Type
+function create_post_type_vacancy() {
+
+
+    $labels_vacancy_category = array(
+        'name'                       => 'Categories',
+        'singular_name'              => 'Category',
+        'menu_name'                  => 'Category',
+        'all_items'                  => 'All categories',
+        'add_new_item'               => 'Add new category',
+        'edit_item'                  => 'Edit category',
+    );
+    $args_vacancy_category = array(
+        'labels'                     => $labels_vacancy_category,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => false,
+    );
+    register_taxonomy( 'vacancy_category', array( 'vacancy' ), $args_vacancy_category );
+
+    $labels_vacancy_location = array(
+        'name'                       => 'Locations',
+        'singular_name'              => 'Location',
+        'menu_name'                  => 'Location',
+        'all_items'                  => 'All locations',
+        'add_new_item'               => 'Add new location',
+        'edit_item'                  => 'Edit location',
+    );
+    $args_vacancy_location = array(
+        'labels'                     => $labels_vacancy_location,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => false,
+    );
+    register_taxonomy( 'vacancy_location', array( 'vacancy' ), $args_vacancy_location );
+
+
+    register_post_type('vacancy', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Vacancies', 'webfactor'), // Rename these to suit
+            'singular_name' => __('Vacancy', 'webfactor'),
+            'add_new' => __('Add New', 'webfactor'),
+            'add_new_item' => __('Add New Vacancy', 'webfactor'),
+            'edit' => __('Edit', 'webfactor'),
+            'edit_item' => __('Edit Vacancy', 'webfactor'),
+            'new_item' => __('New Vacancy', 'webfactor'),
+            'view' => __('View Vacancy', 'webfactor'),
+            'view_item' => __('View Vacancy', 'webfactor'),
+            'search_items' => __('Search Vacancies', 'webfactor'),
+            'not_found' => __('No Vacancies found', 'webfactor'),
+            'not_found_in_trash' => __('No Vacancies found in Trash', 'webfactor')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'supports' => array(
+            'title',
+            'thumbnail',
+            'editor',
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+
+        ) // Add Category and Post Tags support
+    ));
+}
+
+
+
+
+
 
 
 /*------------------------------------*\

@@ -127,7 +127,27 @@ table {
 th, td {font-size: 1.5em;padding:10px;border:0}
 section td {font-size: 2em;line-height: 160%;padding:0 0 10px;}
 
-input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;}
+input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;border-radius: 3px;}
+textarea {padding: 10px;width: 100%;font-size: 1.5em;border-radius: 3px;}
+
+input[type="submit"] {
+    display: inline-block;
+    width: auto;
+    padding: 10px 50px;
+    background: $yellow;
+    color: $brand_color;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.7;
+    &:hover {
+        opacity: 1;
+    }
+    &:active {
+        transform: translateY(2px);
+    }
+}
 
 img {
 	max-width: 100%;

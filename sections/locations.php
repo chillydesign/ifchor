@@ -1,7 +1,7 @@
 ﻿<div class="container">
 
     <div class="locations_map_container">
-        <?php include 'locations_map3.svg'; ?>
+        <?php include('locations_map3.svg'); ?>
 
 
         <div class="location_box_australia_1_ location_box">
@@ -48,7 +48,7 @@
         </div>
 
 
-     
+
 
 
 

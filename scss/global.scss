@@ -8,6 +8,7 @@
 @import 'header';
 @import 'footer';
 @import "people";
+@import "vacancies";
 
 // @import '../node_modules/slick-carousel/slick/slick.scss';
 // @import '../node_modules/slick-carousel/slick/slick-theme.scss';
@@ -92,6 +93,12 @@ section.section_colonnes + section.section_colonnes, section.section_two_thirds_
 
 p + .encadre {margin-top: 20px;}
 .encadre + p {margin-top: 30px;}
+
+.meta {
+    font-style: italic;
+    color: $medium_grey;
+    margin: 0 0 20px;
+}
 
 @import 'posts';
 @import 'sections/top_section';

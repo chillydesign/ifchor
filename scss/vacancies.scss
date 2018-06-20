@@ -1,0 +1,29 @@
+.apply_for_job {
+    background: lighten($primary_color,5);
+    color: white;
+    padding: 30px 0 ;
+
+    form {
+        margin: 30px 0 0;
+
+        div.row {
+            margin-bottom: 15px;
+        }
+
+        input, textarea {
+            
+        }
+
+        input[type="file"] {
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.apply_title {
+    padding: 20px 0 ;
+    background: $yellow;
+    color: $brand_color;
+}
