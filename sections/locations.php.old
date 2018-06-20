@@ -1,4 +1,4 @@
-﻿<div class="container">
+<div class="container">
 
     <div class="locations_map_container">
         <?php include 'locations_map3.svg'; ?>
@@ -46,13 +46,6 @@
             </p>
             <a href="#" class="close_location_box">X</a>
         </div>
-
-
-     
-
-
-
-
         <div class="location_box_denmakr location_box">
             <h3>Denmark</h3>
             <p>Strandvejen 60, 3rd floor<br />
