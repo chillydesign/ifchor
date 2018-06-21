@@ -82,7 +82,7 @@ function process_jobapplication_form() {
             // send_jobapplication_emails( $data );
 
 
-            wp_redirect( $referer . '?message=success' );
+            wp_redirect( $referer . '?message=success#application' );
         }
 
 

@@ -12,7 +12,7 @@
         <section class="section_photo_slide" style="margin-top:-50px">
             <div class="photo_slide_content">
                 <h1><?php the_title(); ?></h1>
-                <a href="<?php echo home_url(); ?>/careers" class="back_to_vacancies">Back to all vacancies</a>
+                <a href="<?php echo home_url(); ?>/careers" class="back_to_vacancies">Careers</a>
             </div>
             <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
                 <?php $image = thumbnail_of_post_url(get_the_ID(), 'full'); ?>
