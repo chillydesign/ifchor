@@ -1,7 +1,7 @@
 ﻿<div class="container">
 
     <div class="locations_map_container">
-        <?php include('locations_map3.svg'); ?>
+        <?php include('locations_map4.svg'); ?>
 
 
         <div class="location_box_australia_1_ location_box">
@@ -29,7 +29,7 @@
             <h3>China</h3>
             <p>Beijing<br />
 
-                <a href="#">Google Maps</a>
+                <!-- <a href="#">Google Maps</a> -->
 
             </p>
             <a href="#" class="close_location_box">X</a>
@@ -37,20 +37,15 @@
 
 
         <div class="location_box_usa location_box">
-            <h3>USA</h3>
+            <h3>New York, USA</h3>
             <p>390 Plandome Road, Suite 204 <br />
                 Manhasset, New-York 11030<br />
                 +1 631-923-1099<br />
-                <a href="#">Google Maps</a>
+                <a target="_blank" href="https://www.google.com/maps/place/390+Plandome+Rd+%23204,+Manhasset,+NY+11030,+USA/@40.7979578,-73.7017668,17z/data=!3m1!4b1!4m5!3m4!1s0x89c288fe74ce1599:0x699998001a9f1be8!8m2!3d40.7979538!4d-73.6995781">Google Maps</a>
 
             </p>
             <a href="#" class="close_location_box">X</a>
         </div>
-
-
-
-
-
 
 
         <div class="location_box_denmakr location_box">
@@ -58,7 +53,7 @@
             <p>Strandvejen 60, 3rd floor<br />
                 dk-2900 Hellerup,Copenhagen <br />
                 +45 88 82 56 50<br />
-                <a href="#">Google Maps</a>
+                <a target="_blank" href="https://www.google.com/maps/place/Strandvejen+60,+2900+Hellerup,+Denmark/@55.7271141,12.5749604,17z/data=!3m1!4b1!4m5!3m4!1s0x46525287f9b76025:0xd10a6ac591397dc1!8m2!3d55.7271111!4d12.5771491">Google Maps</a>
 
             </p>
             <a href="#" class="close_location_box">X</a>
@@ -72,7 +67,7 @@
                     <p>Place Pepinet, 1 <br />
                         1003 Lausanne <br />
                         +41 21 310 31 31<br />
-                        <a href="#">Google Maps</a>
+                <a target="_blank" href="https://www.google.com/maps/place/Place+P%C3%A9pinet+1,+1003+Lausanne,+Switzerland/@46.5214211,6.6301708,17z/data=!3m1!4b1!4m5!3m4!1s0x478c2e322ff4e049:0x2ee6fe53927a702b!8m2!3d46.5214174!4d6.6323595">Google Maps</a>
 
                     </div>
                     <div class="col-sm-6">
@@ -80,7 +75,7 @@
                         <p>Rue de Chantepoulet 5 <br />
                             1201 Genève <br />
                             +41 21 310 31 34<br />
-                            <a href="#">Google Maps</a>
+                        <a target="_blank" href="https://www.google.com/maps/place/Rue+de+Chantepoulet+5,+1201+Gen%C3%A8ve,+Switzerland/@46.2078834,6.1428574,17z/data=!3m1!4b1!4m5!3m4!1s0x478c65263173e753:0x62935aafda94c86b!8m2!3d46.2078797!4d6.1450461">Google Maps</a>
 
                         </div>
                     </div>
@@ -95,7 +90,7 @@
                     <p>One George Street #07-04 <br />
                         Singapore 049145<br />
                         +65 6908 150<br />
-                        <a href="#">Google Maps</a>
+                    <a target="_blank" href="https://www.google.com/maps/place/7+George+St,+Singapore/@1.2857556,103.8459901,17z/data=!3m1!4b1!4m5!3m4!1s0x31da190b9f46e719:0xbd5bca6bf08103ae!8m2!3d1.2857502!4d103.8481788">Google Maps</a>
                     </p>
                     <a href="#" class="close_location_box">X</a>
                 </div>
@@ -104,9 +99,29 @@
                     <p>
                       Via G. D'Annunzio 2/101<br />
                       Genova, 16122<br />
+                      <a target="_blank" href="https://www.google.com/maps/place/Via+Gabriele+d'Annunzio,+2,+16121+Genova+GE,+Italy/@44.4046664,8.9329545,17z/data=!3m1!4b1!4m5!3m4!1s0x12d343dcd68b2821:0x5c678aaf3b14fe4a!8m2!3d44.4046626!4d8.9351432">Google Maps</a>
 
                     </p>
-                    <p><a href="#">Google Maps</a></p>
+                    <a href="#" class="close_location_box">X</a>
+                </div>
+                <div class="location_box_seattle location_box">
+                    <h3>Seattle, USA</h3>
+                    <p>
+                        1221 1st Ave, Room 1211 <br />
+                        Seattle, WA 98101<br />
+                     <a target="_blank" href="https://www.google.com/maps/place/1221+1st+Ave+%231211,+Seattle,+WA+98101,+USA/@47.606347,-122.3403869,17z/data=!3m1!4b1!4m5!3m4!1s0x54906ab18a225d71:0xf850f7beae1a062c!8m2!3d47.6063434!4d-122.3381982">Google Maps</a>
+                    </p>
+
+                    <a href="#" class="close_location_box">X</a>
+                </div>
+                <div class="location_box_dubai location_box">
+                    <h3>Dubai</h3>
+                    <p>
+                      2501 Westburry Tower<br />
+                      Business Bay, Dubai - UAE<br />
+                       <a target="_blank" href="https://www.google.com/maps/search/2501+Westburry+Tower+Business+Bay,+Dubai+-+UAE/@25.1859372,55.2724433,17z/data=!3m1!4b1">Google Maps</a>
+                    </p>
+
                     <a href="#" class="close_location_box">X</a>
                 </div>
 
