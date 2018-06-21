@@ -124,7 +124,7 @@ function send_jobapplication_emails($data){
     $email_subject_for_admin = 'Job application for ' . $data['position'] . ' - IFCHOR';
     $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
-    wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
+    wp_mail( 'hr@ifchor.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
