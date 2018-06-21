@@ -120,8 +120,7 @@ function send_jobapplication_emails($data){
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
-
-    $paragraph_for_admin = '<p>A job application for '. $data['position'] . 'has_been_made.</p><br /><br />';
+    $paragraph_for_admin = '<p>A job application for '. $data['position'] . ' has been made.</p><br />';
     $email_subject_for_admin = 'Job application for ' . $data['position'] . ' - IFCHOR';
     $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
