@@ -79,7 +79,7 @@ function process_jobapplication_form() {
 
 
             // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
-            // send_jobapplication_emails( $data );
+            send_jobapplication_emails( $data );
 
 
             wp_redirect( $referer . '?message=success#application' );
@@ -115,33 +115,33 @@ function send_jobapplication_emails($data){
 
 
 
-    $headers = 'From: ENSR Summercamp <info@ensr.ch>' . "\r\n";
+    $headers = 'From: Ifchor HR <hr@ifchor.com>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
 
-    $paragraph_for_admin = '<p>Une nouvelle inscription a été enregistrée pour le camp d’été :</p><br /><br />';
-    $email_subject_for_admin = 'Nouvelle inscription au Camp d’été ENSR';
-    $app_summary_for_admin = generate_jobapplication_summary( 'fr', $data);
+    $paragraph_for_admin = '<p>A job application for '. $data['position'] . 'has_been_made.</p><br /><br />';
+    $email_subject_for_admin = 'Job application for ' . $data['position'] . ' - IFCHOR';
+    $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
-    wp_mail( 'info@ensr.ch' , $email_subject_for_admin, $email_content_for_admin, $headers );
+    wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
-        $paragraph_for_user =  chilly_translate_string('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
-An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>');
-
-
-    $email_subject_for_user = chilly_translate_string('Your jobapplication to ENSR Summer Camp');
-    $data_for_user = $data;
-    // remove insurance and photo file for user email
-    $data_for_user['insurance_attestation'] = '';
-    $data_for_user['photo'] = '';
-    $app_summary_for_user = generate_jobapplication_summary( $language, $data_for_user);
-    $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
-
-    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
+//         $paragraph_for_user =  chilly_translate_string('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
+// An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>');
+//
+//
+//     $email_subject_for_user = ('Your jobapplication to ENSR Summer Camp');
+//     $data_for_user = $data;
+//     // remove cv and additional document for user email
+//     $data_for_user['cv'] = '';
+//     $data_for_user['additional_document'] = '';
+//     $app_summary_for_user = generate_jobapplication_summary(  $data_for_user);
+//     $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
+//
+//     wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
 
 
