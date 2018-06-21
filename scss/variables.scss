@@ -4,6 +4,8 @@ $primary_color: #251f4b;
 $brand_color: $primary_color;
 
 $yellow: #ffe135;
+$red: #f32;
+$green: adjust-hue($red, 150);
 
 $background_color: #fff;
 $light_grey: #f1f1f1;

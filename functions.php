@@ -576,6 +576,36 @@ function create_post_type_vacancy() {
 
         ) // Add Category and Post Tags support
     ));
+
+    register_post_type('jobapplication', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Job applications', 'webfactor'), // Rename these to suit
+            'singular_name' => __('Job application', 'webfactor'),
+            'add_new' => __('Add New', 'webfactor'),
+            'add_new_item' => __('Add New Job application', 'webfactor'),
+            'edit' => __('Edit', 'webfactor'),
+            'edit_item' => __('Edit Job application', 'webfactor'),
+            'new_item' => __('New Job application', 'webfactor'),
+            'view' => __('View Job application', 'webfactor'),
+            'view_item' => __('View Job application', 'webfactor'),
+            'search_items' => __('Search Job applications', 'webfactor'),
+            'not_found' => __('No Job applications found', 'webfactor'),
+            'not_found_in_trash' => __('No Job applications found in Trash', 'webfactor')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'supports' => array(
+            'title'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+
+        ) // Add Category and Post Tags support
+    ));
+
 }
 
 
@@ -1012,6 +1042,54 @@ function process_registration_form() {
       wp_redirect( $referer . '?success' );
     endif;
 }
+
+
+
+function terms_to_name_array($terms) {
+    if ($terms && sizeof($terms) > 0) {
+        $names = array_map( function($term) { return $term->name; },  $terms  );
+        return $names;
+    } else {
+        return false;
+    };
+}
+
+function terms_to_slug_array($terms) {
+    if ($terms && sizeof($terms) > 0) {
+        $slugs = array_map( function($term) { return $term->slug; },  $terms  );
+        return $slugs;
+    } else {
+        return false;
+    };
+}
+
+function terms_to_name_string( $terms) {
+    if ($terms && sizeof($terms) > 0) {
+        $names = terms_to_name_array($terms);
+        $string = implode( $names, ', ');
+        return $string;
+    } else {
+        return '';
+    };
+
+}
+function terms_to_name_data( $terms) {
+    if ($terms && sizeof($terms) > 0) {
+        $slugs = terms_to_slug_array($terms);
+        $string = implode( $slugs, '","');
+        return  '["' . ($string) . '"]';
+    } else {
+        return '';
+    };
+
+}
+
+
+
+
+
+
+include('functions_jobform.php');
 
 
 ?>

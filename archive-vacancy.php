@@ -4,7 +4,7 @@
 		<!-- section -->
 		<section class="container">
 
-			<h1><?php _e( 'Archives', 'webfactor' ); ?></h1>
+			<h1><?php _e( 'Vacancies', 'webfactor' ); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 

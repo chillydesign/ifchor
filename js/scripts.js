@@ -275,6 +275,57 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
           });
 
 
+
+
+          // vanacy filters
+          var $vacancy_filters = $('.vacancy_filter select');
+          var $vacancies = $('.single_vacancy');
+          var $no_vacancies_message = $('#no_vacancies_message');
+          $vacancy_filters.on('change', function(e) {
+              var $vis_vacancies_count = 0;
+              $vacancies.each( function(ii){
+                 var $vacancy = $(this);
+                 var $locations = $vacancy.data('locations');
+                 var $categories = $vacancy.data('categories');
+                 var $is_in_cat = $is_in_loc = false;
+
+                 $vacancy_filters.each( function() {
+                     var $filter = $(this);
+                     var $val = $filter.val();
+                     var $filter = $filter.attr('name');
+                     if ( $filter == 'vacancy_category' ) {
+                         if ($val != '') {
+                             $is_in_cat =  ( $categories.indexOf( $val ) > -1 );
+                         } else {
+                             $is_in_cat = true;
+                         }
+                     } else if ($filter == 'vacancy_location') {
+                         if ($val != '') {
+                             $is_in_loc =  ( $locations.indexOf( $val ) > -1 );
+                         } else {
+                             $is_in_loc = true;
+                         }
+                     };
+                 });
+
+                 if ($is_in_cat && $is_in_loc) {
+                     $vacancy.show();
+                     $vis_vacancies_count++;
+                 } else {
+                     $vacancy.hide();
+                 }
+              });
+
+              if ($vis_vacancies_count == 0) {
+                  $no_vacancies_message.show();
+              } else {
+                  $no_vacancies_message.hide();
+              }
+
+          });
+          // vacancy filters
+
+
     });
 
 

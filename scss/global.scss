@@ -100,6 +100,24 @@ p + .encadre {margin-top: 20px;}
     margin: 0 0 20px;
 }
 
+
+.alert {
+    border-radius: 5px;
+    margin: 0 0 20px;
+    padding: 20px;
+    font-size: $font_size;
+    &.alert-success {
+        border: 1px solid $green;
+        background: lighten($green, 15);
+        color: darken($green, 25);
+    }
+    &.alert-danger {
+        border: 1px solid $red;
+        background: lighten($red, 15);
+        color: darken($red, 25);
+    }
+}
+
 @import 'posts';
 @import 'sections/top_section';
 @import 'sections/page_title';
