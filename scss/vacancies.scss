@@ -33,10 +33,6 @@
     background: $brand_color;
     color: white;
 
-    a {
-        color: white;
-        text-decoration: underline;
-    }
 
 
     .vacancies_container {
@@ -61,6 +57,7 @@
 
             h3 {
                 font-size: 2.2em;
+                text-transform: uppercase;
             }
 
             p {
@@ -69,6 +66,7 @@
 
             a {
                 color: $brand_color;
+                text-decoration: none;
             }
 
             footer {
@@ -98,4 +96,42 @@
     opacity: 0.5;
     display: inline-block;
     font-size: 1.2em;
+}
+
+#no_vacancies_message {
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+
+#vacancies_header {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        width: 30%;
+        flex: 1 auto 0;
+    }
+    form {
+        text-align: right;
+        width: 70%;
+        flex: 1 auto 0;
+        .vacancy_filter {
+            display: inline-block;
+            margin: 0 0 10px 10px;
+            label {
+                display: none;
+            }
+            select {
+                font-size: 1.6em;
+                appearance:none;
+                border: 1px solid  lighten($brand_color, 50);
+                background:   lighten($brand_color, 5);
+                padding: 10px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
 }

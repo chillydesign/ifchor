@@ -2,10 +2,9 @@
 			<!-- End of allbutfooter -->
 			<!-- footer -->
 			<footer  id="footer" class="footer" role="contentinfo">
-
-				<p class="container">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a>
-				</p>
+                <div class="container">
+				<p> &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a></p>
+                </div>
 				<div class="footer_background"></div>
 			</footer>
 			<!-- /footer -->

@@ -287,7 +287,8 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
                  var $vacancy = $(this);
                  var $locations = $vacancy.data('locations');
                  var $categories = $vacancy.data('categories');
-                 var $is_in_cat = $is_in_loc = false;
+                 var $is_in_cat = false;
+                 var $is_in_loc = false;
 
                  $vacancy_filters.each( function() {
                      var $filter = $(this);
