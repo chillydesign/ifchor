@@ -114,7 +114,7 @@
                     </div>
                     <div>
                         <label class="checkbox_label" for="terms_conditions">
-                            <input type="checkbox" value="agree" id="terms_conditions" name="terms_conditions" /><span> I acknowledge that IFCHOR SA has the right to collect, store and process the data I upload with my application, for the purpose of potential employment only.</span>
+                            <input type="checkbox" value="agree" id="terms_conditions" name="terms_conditions" /><span> I acknowledge that IFCHOR SA has the right to collect, store and process the data I upload with my application, for the purpose of potential employment only. * </span>
                         </label>
 
                     </div>
