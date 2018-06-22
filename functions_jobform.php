@@ -14,9 +14,11 @@ function have_required_fields() {
           isset( $_POST['first_name'] )  &&
           isset( $_POST['last_name'] ) &&
           isset( $_POST['email'] ) &&
+          isset( $_POST['terms_conditions'] ) &&
           $_POST['first_name'] != '' &&
           $_POST['last_name'] != '' &&
-          $_POST['email'] != ''
+          $_POST['email'] != '' &&
+          $_POST['terms_conditions'] == 'agree' 
 
       );
 }
@@ -125,22 +127,6 @@ function send_jobapplication_emails($data){
     $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
     wp_mail( 'hr@ifchor.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
-
-
-
-//         $paragraph_for_user =  chilly_translate_string('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
-// An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>');
-//
-//
-//     $email_subject_for_user = ('Your jobapplication to ENSR Summer Camp');
-//     $data_for_user = $data;
-//     // remove cv and additional document for user email
-//     $data_for_user['cv'] = '';
-//     $data_for_user['additional_document'] = '';
-//     $app_summary_for_user = generate_jobapplication_summary(  $data_for_user);
-//     $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
-//
-//     wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
 
 

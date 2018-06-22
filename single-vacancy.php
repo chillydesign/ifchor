@@ -113,6 +113,12 @@
                         <textarea name="message" id="message" cols="30" rows="4" placeholder="Your message here"><?php echo $message; ?></textarea>
                     </div>
                     <div>
+                        <label class="checkbox_label" for="terms_conditions">
+                            <input type="checkbox" value="agree" id="terms_conditions" name="terms_conditions" /><span> I acknowledge that IFCHOR SA has the right to collect, store and process the data I upload with my application, for the purpose of potential employment only.</span>
+                        </label>
+
+                    </div>
+                    <div>
                         <input type="hidden" name="position" value="<?php echo $post_id; ?>" />
                         <input type="hidden" name="action" value="jobapplication_form" />
                         <input id="application_submit_button" type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>" />
