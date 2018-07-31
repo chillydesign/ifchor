@@ -126,14 +126,14 @@ function send_jobapplication_emails($data){
     $email_subject_for_admin = 'Job application for ' . $data['position'] . ' - IFCHOR';
     $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
-    wp_mail( 'melissa.rissel@webfactor.ch' , $email_subject_for_admin, $email_content_for_admin, $headers );
+//    wp_mail( 'melissa.rissel@webfactor.ch' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
         $paragraph_for_user =
         "Dear " . $_POST['first_name'] . " " . $_POST['last_name'] . ",<br><br>
 
-        We acknowledge receipt of your resume and application for the position of " .  get_the_title($_POST['position']) . " at IFCHOR and sincerely appreciate your interest in our company.<br><br>
+        We acknowledge receipt of your resume and application for the position of " .  $data['position'] . " at IFCHOR and sincerely appreciate your interest in our company.<br><br>
 
         We will screen all applicants and select candidates whose qualifications seem to meet our needs. We will carefully consider your application during the initial screening and will contact you if you are selected to continue in the recruitment process.<br><br>
 
@@ -150,8 +150,10 @@ function send_jobapplication_emails($data){
     $app_summary_for_user = generate_jobapplication_summary(  $data_for_user);
     $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
 
-    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
+//    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
+
+    var_dump($app_summary_for_user);
 
 
     remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
@@ -218,20 +220,19 @@ function convert_post_to_data($jobapplication_id, $post, $cv_file, $additional_d
 
 
     // IF they uploaded an insurance doc, or a photo, show the link to it
+    var_dump( $cv_file['size'] > 0);
     if ( $cv_file['size'] > 0 ) {
         $cv_id = get_field( 'cv', $jobapplication_id  );
         $cv_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $cv_id ) );
         $post['cv'] = $cv_link->guid;
-    }
-    else {
+    } else {
       $cv_link = "";
     }
     if ( $additional_document_file['size'] > 0 ) {
         $additional_doc_id = get_field( 'additional_document', $jobapplication_id  );
         $additional_doc_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $additional_doc_id ) );
         $post['additional_document'] = $additional_doc_link->guid;
-    }
-    else {
+    } else {
       $additional_doc_link = "";
     }
 
