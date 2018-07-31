@@ -184,12 +184,6 @@ function generate_jobapplication_summary(  $data ) {
                     $body .=   nl2br($data[$field]) ;
                 }
 
-                if($data['cv']){
-                  $body.='<br><br><strong><a href="' . $data['cv'] . '">Download CV</a></<strong>';
-                }
-                if($add_download_link){
-                  $body.='<br><br><strong><a href="' . $add_download_link . '">Download additional document</a></<strong>';
-                }
 
 
                 $body .= '</p>';
@@ -257,14 +251,14 @@ function convert_post_to_data($jobapplication_id, $post, $cv_file, $additional_d
 function all_jobapplication_fields(){
 
     return array(
+        'position' => 'Position',
         'first_name' => 'First Name',
         'last_name' => 'Last Name',
         'email' => 'Email',
         'telephone' => 'Phone',
         'message' => 'Message',
         'cv' => 'CV',
-        'additional_document' => 'Additional Document',
-        'position' => 'Position'
+        'additional_document' => 'Additional Document'
 
     );
 
