@@ -199,7 +199,7 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]:checked {
-    background: $yellow;
+    background: darken($yellow,10);
 }
 
 input#submit_course_form {
