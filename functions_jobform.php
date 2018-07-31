@@ -115,7 +115,7 @@ function send_jobapplication_emails($data){
 
 
 
-    $headers = 'From: Ifchor HR <hr@ifchor.com>' . "\r\n";
+    $headers = 'From: Ifchor HR <onlineapplication@ifchor.com>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
@@ -124,23 +124,31 @@ function send_jobapplication_emails($data){
     $email_subject_for_admin = 'Job application for ' . $data['position'] . ' - IFCHOR';
     $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
-    wp_mail( 'hr@ifchor.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
+    wp_mail( 'melissa.rissel@webfactor.ch' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
-//         $paragraph_for_user =  chilly_translate_string('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
-// An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>');
-//
-//
-//     $email_subject_for_user = ('Your jobapplication to ENSR Summer Camp');
-//     $data_for_user = $data;
-//     // remove cv and additional document for user email
-//     $data_for_user['cv'] = '';
-//     $data_for_user['additional_document'] = '';
-//     $app_summary_for_user = generate_jobapplication_summary(  $data_for_user);
-//     $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
-//
-//     wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
+        $paragraph_for_user =
+        "Dear " . $_POST['first_name'] . " " . $_POST['last_name'] . ",<br><br>
+
+        We acknowledge receipt of your resume and application for the position of " .  get_the_title($_POST['position']) . " at IFCHOR and sincerely appreciate your interest in our company.<br><br>
+
+        We will screen all applicants and select candidates whose qualifications seem to meet our needs. We will carefully consider your application during the initial screening and will contact you if you are selected to continue in the recruitment process.<br><br>
+
+        We wish you every success.<br><br>
+
+        IFCHOR <br><br><br> <hr> <br><br><br><strong>Application summary:</strong><br><br>";
+
+
+    $email_subject_for_user = ('Your job application to IFCHOR');
+    $data_for_user = $data;
+    // remove cv and additional document for user email
+    //$data_for_user['cv'] = '';
+    //$data_for_user['additional_document'] = '';
+    $app_summary_for_user = generate_jobapplication_summary(  $data_for_user);
+    $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
+
+    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
 
 
@@ -164,6 +172,7 @@ function generate_jobapplication_summary(  $data ) {
 
             if ($field == 'terms') {
                 // dont show terms
+
             } else {
                 $body .= '<p><strong>' . __($translation, 'webfactor') . '</strong>: <br /> ';
 
@@ -172,6 +181,14 @@ function generate_jobapplication_summary(  $data ) {
                 } else {
                     $body .=   nl2br($data[$field]) ;
                 }
+
+                if($data['cv']){
+                  $body.='<br><br><strong><a href="' . $data['cv'] . '">Download CV</a></<strong>';
+                }
+                if($add_download_link){
+                  $body.='<br><br><strong><a href="' . $add_download_link . '">Download additional document</a></<strong>';
+                }
+
 
                 $body .= '</p>';
             }
@@ -210,10 +227,16 @@ function convert_post_to_data($jobapplication_id, $post, $cv_file, $additional_d
         $cv_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $cv_id ) );
         $post['cv'] = $cv_link->guid;
     }
+    else {
+      $cv_link = "";
+    }
     if ( $additional_document_file['size'] > 0 ) {
         $additional_doc_id = get_field( 'additional_document', $jobapplication_id  );
         $additional_doc_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $additional_doc_id ) );
         $post['additional_document'] = $additional_doc_link->guid;
+    }
+    else {
+      $additional_doc_link = "";
     }
 
 

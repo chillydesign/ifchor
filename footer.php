@@ -2,8 +2,8 @@
 			<!-- End of allbutfooter -->
 			<!-- footer -->
 			<footer  id="footer" class="footer" role="contentinfo">
-                <div class="container">
-				<p> &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a></p>
+                <div class="container"  style="position:relative;z-index:9999;">
+				<p style="text-align:center; width:100%;"> &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?> | <a href="<?php echo get_home_url(); ?>/privacy-policy">Privacy Policy</a> | Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a></p>
                 </div>
 				<div class="footer_background"></div>
 			</footer>
