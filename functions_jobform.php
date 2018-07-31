@@ -18,7 +18,7 @@ function have_required_fields() {
           $_POST['first_name'] != '' &&
           $_POST['last_name'] != '' &&
           $_POST['email'] != '' &&
-          $_POST['terms_conditions'] == 'agree' 
+          $_POST['terms_conditions'] == 'agree'
 
       );
 }
@@ -130,7 +130,6 @@ function send_jobapplication_emails($data){
 
 
 
-<<<<<<< HEAD
         $paragraph_for_user =
         "Dear " . $_POST['first_name'] . " " . $_POST['last_name'] . ",<br><br>
 
@@ -155,8 +154,6 @@ function send_jobapplication_emails($data){
 
 
 
-=======
->>>>>>> b4fa8f0d95131e8cd664f4bd97ae6cec078e1383
     remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 
 
