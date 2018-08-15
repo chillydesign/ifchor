@@ -1,7 +1,7 @@
-﻿<div class="container">
+<div class="container">
 
     <div class="locations_map_container">
-        <?php include('locations_map4.svg'); ?>
+        <?php include('map2.svg'); ?>
 
 
         <div class="location_box_australia_1_ location_box">
@@ -10,6 +10,15 @@
                 Melbourne VIC 3000 <br />
                 +61 (0)410 668 506 <br />
                 <a href="https://www.google.co.uk/maps/place/360+Collins+St,+Melbourne+VIC+3000,+Australia/@-37.8163265,144.9601497,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad642b4a2bcf095:0x71c25fe89fa00c!8m2!3d-37.8163265!4d144.9623384" target="_blank">Google Maps</a>
+            </p>
+            <a href="#" class="close_location_box">X</a>
+        </div>
+        <div class="location_box_monaco location_box">
+            <h3>Monaco</h3>
+            <p>20 Boulevard Princesse Charlotte <br />
+                98000 Monaco, Monaco <br />
+                +377 9798 0790 <br />
+                <a href="https://www.google.fr/maps/place/Boulevard+Princesse+Charlotte,+98000+Monaco/@43.7399129,7.4216603,17z/data=!3m1!4b1!4m5!3m4!1s0x12cdc289c32138f9:0xe7f7a67ccc1a659b!8m2!3d43.7399129!4d7.423849" target="_blank">Google Maps</a>
             </p>
             <a href="#" class="close_location_box">X</a>
         </div>

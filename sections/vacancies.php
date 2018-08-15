@@ -63,14 +63,14 @@ $vacancy_locations = get_terms('vacancy_location');
             </div>
 
             <div id="no_vacancies_message" style="display:none">
-                <p>Sorry. No vacancies currently.</p>
-                <p>We always like getting cvs though. Please send yours to <a href="mailto:person@email.com">person@email.com</a> and we might consider you. </p>
+                <p>We do not currently have any vacancies, but are always happy to receive cv's from anyone who might be interested in joining one of our dynamic team of brokers located worldwide.</p>
+                <p>Please apply by sending your cv to : <a href="mailto:hr@ifchor.ch">hr@ifchor.ch</a>. </p>
             </div>
 
         <?php else: ?>
             <div id="no_vacancies_message">
-                <p>Sorry. No vacancies currently.</p>
-                <p>We always like getting cvs though. Please send yours to <a href="mailto:person@email.com">person@email.com</a> and we might consider you. </p>
+                <p>We do not currently have any vacancies, but are always happy to receive cv's from anyone who might be interested in joining one of our dynamic team of brokers located worldwide.</p>
+                <p>Please apply by sending your cv to : <a href="mailto:hr@ifchor.com">hr@ifchor.com</a></p>
             </div>
 
         <?php endif;  ?>

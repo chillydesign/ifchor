@@ -126,7 +126,7 @@ function send_jobapplication_emails($data){
     $email_subject_for_admin = 'Job application for ' . $data['position'] . ' - IFCHOR';
     $app_summary_for_admin = generate_jobapplication_summary( $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
-//    wp_mail( 'melissa.rissel@webfactor.ch' , $email_subject_for_admin, $email_content_for_admin, $headers );
+    wp_mail( 'hr@ifchor.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
@@ -150,10 +150,8 @@ function send_jobapplication_emails($data){
     $app_summary_for_user = generate_jobapplication_summary(  $data_for_user);
     $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
 
-//    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
+    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
-
-    var_dump($app_summary_for_user);
 
 
     remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
@@ -220,18 +218,23 @@ function convert_post_to_data($jobapplication_id, $post, $cv_file, $additional_d
 
 
     // IF they uploaded an insurance doc, or a photo, show the link to it
-    var_dump( $cv_file['size'] > 0);
     if ( $cv_file['size'] > 0 ) {
         $cv_id = get_field( 'cv', $jobapplication_id  );
         $cv_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $cv_id ) );
-        $post['cv'] = $cv_link->guid;
+        // $post['cv'] = $cv_link->guid;echo '<br><br>';
+        // var_dump($post['cv']); echo '<br><br>';
+        // var_dump($cv_id);echo '<br><br>';
+        // echo($cv_id['url']);echo '<br><br>';
+        // var_dump($cv_link);
+        $post['cv']=$cv_id['url'];
     } else {
       $cv_link = "";
     }
     if ( $additional_document_file['size'] > 0 ) {
         $additional_doc_id = get_field( 'additional_document', $jobapplication_id  );
-        $additional_doc_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $additional_doc_id ) );
-        $post['additional_document'] = $additional_doc_link->guid;
+      //  $additional_doc_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $additional_doc_id ) );
+        //$post['additional_document'] = $additional_doc_link->guid;
+        $post['additional_document'] = $additional_doc_id['url'];
     } else {
       $additional_doc_link = "";
     }
