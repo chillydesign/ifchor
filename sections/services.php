@@ -39,6 +39,13 @@
       </a>
     </div>
 
+    <div class="service_box">
+      <a href="<?php the_sub_field('link6'); ?>">
+        <?php include('marine-technology.svg'); ?>
+          <h4><?php the_sub_field('title6'); ?></h4>
+      </a>
+    </div>
+
 
   </div>
 </div><!--  END OF CONTAINER -->

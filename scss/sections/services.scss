@@ -21,7 +21,7 @@
         transition: 0s fill;
       }
       &:hover {
-        svg g#icon path {
+        svg g#icon path, svg g#icon rect, svg g#icon polygon {
           fill: $yellow!important;
           transition-duration:0.3s;
           transition-timing-function: ease-in-out;
@@ -39,7 +39,7 @@
   .services_container{
     margin:0 -45px;
     .service_box {
-      width: 19%;
+      width: 16%;
       padding: 0 20px;
     }
   }

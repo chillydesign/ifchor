@@ -118,6 +118,12 @@ p + .encadre {margin-top: 20px;}
     }
 }
 
+iframe {display: block; width: 100%;}
+
+.wp-video {
+    width: 100%!important;
+}
+
 @import 'posts';
 @import 'sections/top_section';
 @import 'sections/page_title';

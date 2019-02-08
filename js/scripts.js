@@ -88,9 +88,11 @@ import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.min.js';
             'controls': true,
             'pager': false,
             'auto': true,
+            'autoStart' : true,
             'autoHover': true,
-            'pause' : 7000,
-            'keyboardEnabled' : true
+            // 'pause' : 7000,
+            'keyboardEnabled' : true,
+            'speed' : 500
 
         });
 

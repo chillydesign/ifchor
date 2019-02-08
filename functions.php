@@ -88,7 +88,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.9 ';
+  return '07.02.2019 ';
 }
 
 // Load HTML5 Blank scripts (header.php)
