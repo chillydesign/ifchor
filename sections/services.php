@@ -1,5 +1,3 @@
-<?php $item_count =  sizeof(  get_sub_field('service')  ); ?>
-<?php $i = 1; ?>
 
 <div class="container">
   <div class="services_container">
