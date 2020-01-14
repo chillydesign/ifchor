@@ -32,14 +32,14 @@
 
     <div class="service_box">
       <a href="<?php the_sub_field('link5'); ?>">
-        <?php include('research.svg'); ?>
+        <?php include('marine-technology.svg'); ?>
           <h4><?php the_sub_field('title5'); ?></h4>
       </a>
     </div>
 
     <div class="service_box">
       <a href="<?php the_sub_field('link6'); ?>">
-        <?php include('marine-technology.svg'); ?>
+        <?php include('research.svg'); ?>
           <h4><?php the_sub_field('title6'); ?></h4>
       </a>
     </div>

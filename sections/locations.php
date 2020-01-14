@@ -1,7 +1,7 @@
-<div class="container">
+﻿<div class="container">
 
     <div class="locations_map_container">
-        <?php include('map2.svg'); ?>
+        <?php include('ifchor-map.svg'); ?>
 
 
         <div class="location_box_australia_1_ location_box">
@@ -59,9 +59,9 @@
 
         <div class="location_box_denmakr location_box">
             <h3>Denmark</h3>
-            <p>Strandvejen 60, 3rd floor<br />
+            <p>Strandvejen 70, 2. sal.<br />
                 dk-2900 Hellerup,Copenhagen <br />
-                +45 88 82 56 50<br />
+                +45 69 15 31 97<br />
                 <a target="_blank" href="https://www.google.com/maps/place/Strandvejen+60,+2900+Hellerup,+Denmark/@55.7271141,12.5749604,17z/data=!3m1!4b1!4m5!3m4!1s0x46525287f9b76025:0xd10a6ac591397dc1!8m2!3d55.7271111!4d12.5771491">Google Maps</a>
 
             </p>
