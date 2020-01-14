@@ -927,8 +927,17 @@ add_action( 'init', 'my_theme_add_editor_styles' );
 add_shortcode( 'registration_form',  'registration_form_shortcode' );
 //  ADD REQUEST FORM AS A SHORTCODE
 function registration_form_shortcode($atts , $content = null) {
+
+
+    $attributes = shortcode_atts(array(
+        'button_text' => "Find out more"
+    ), $atts);
+
+    $button_text = $attributes['button_text'];
+
+
   $rq_frm = '
-  <h6><a class="trigger_open" href="#">Sign up to request Ifchor reports</a></h6>
+  <h6><a class="trigger_open" href="#">'. $button_text . '</a></h6>
   <div class="popup_form">
   <div class="container">
   <form id="course_form" action="' .  esc_url( admin_url('admin-post.php') ) . '" method="post">
