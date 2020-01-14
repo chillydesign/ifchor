@@ -930,60 +930,68 @@ function registration_form_shortcode($atts , $content = null) {
 
 
     $attributes = shortcode_atts(array(
-        'button_text' => "Find out more"
+        'button_text' => "Find out more",
+        'contact_form_id' => 7845,
     ), $atts);
 
     $button_text = $attributes['button_text'];
+    $contact_form_id = $attributes['contact_form_id'];
 
 
   $rq_frm = '
   <h6><a class="trigger_open" href="#">'. $button_text . '</a></h6>
   <div class="popup_form">
-  <div class="container">
-  <form id="course_form" action="' .  esc_url( admin_url('admin-post.php') ) . '" method="post">
-  <h3>Sign up to request Ifchor reports</h3>
+  <div class="container">';
 
-  <label for="first_name">First name</label>
-  <input type="text" name="first_name">
+  $rq_frm .= do_shortcode('[contact-form-7 id="'. $contact_form_id .'" title="Contact Research Team Form"]');
 
-  <label for="last_name">Last name</label>
-  <input type="text" name="last_name">
-
-  <label for="company">Company</label>
-  <input type="text" name="company">
-
-  <label for="position">Position</label>
-  <input type="text" name="position">
-
-  <label for="location">City - Country</label>
-  <input type="text" name="location">
-
-  <label for="email">Email</label>
-  <input type="email" name="email">
-
-  <label for="phone">Phone Number</label>
-  <input type="text" name="phone">
-
-  <p style="margin-bottom:-20px"><strong>Type of report requested</strong></p>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Quarterly Report">Dry Bulk: Quarterly Report</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Monthly Fleet Net Change">Dry Bulk: Monthly Fleet Net Change</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Panamax Assessment">Dry Bulk: Panamax Assessment</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Ifchor Daily Bulletin">Dry Bulk: Ifchor Daily Bulletin</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Wet: Monthly Fleet Net Change">Wet: Monthly Fleet Net Change</label>
-    <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Wet: Ifchor Tankers Market Daily Snapshot">Wet: Ifchor Tankers Market Daily Snapshot</label>
-
-  <label for="message" style="margin-top:40px">Message</label>
-  <textarea name="message"></textarea>
-
-  <input type="hidden" name="action" value="registration_form">
-    <div class="submit_group_button">
-    <input type="submit" id="submit_course_form" value="Submit">
-  </form>
-  <div class="close">x</div>
+  $rq_frm .= '<div class="close">x</div>
   </div>
-  </div>
-  ';
+  </div>';
   return  $rq_frm;
+
+
+//   $rq_frm .= '<form id="course_form" action="' .  esc_url( admin_url('admin-post.php') ) . '" method="post">
+//   <h3>Sign up to request Ifchor reports</h3>
+
+//   <label for="first_name">First name</label>
+//   <input type="text" name="first_name">
+
+//   <label for="last_name">Last name</label>
+//   <input type="text" name="last_name">
+
+//   <label for="company">Company</label>
+//   <input type="text" name="company">
+
+//   <label for="position">Position</label>
+//   <input type="text" name="position">
+
+//   <label for="location">City - Country</label>
+//   <input type="text" name="location">
+
+//   <label for="email">Email</label>
+//   <input type="email" name="email">
+
+//   <label for="phone">Phone Number</label>
+//   <input type="text" name="phone">
+
+//   <p style="margin-bottom:-20px"><strong>Type of report requested</strong></p>
+//     <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Quarterly Report">Dry Bulk: Quarterly Report</label>
+//     <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Monthly Fleet Net Change">Dry Bulk: Monthly Fleet Net Change</label>
+//     <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Panamax Assessment">Dry Bulk: Panamax Assessment</label>
+//     <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Dry Bulk: Ifchor Daily Bulletin">Dry Bulk: Ifchor Daily Bulletin</label>
+//     <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Wet: Monthly Fleet Net Change">Wet: Monthly Fleet Net Change</label>
+//     <label class="checkbox_label"><input type="checkbox" name="reports[]" value="Wet: Ifchor Tankers Market Daily Snapshot">Wet: Ifchor Tankers Market Daily Snapshot</label>
+
+//   <label for="message" style="margin-top:40px">Message</label>
+//   <textarea name="message"></textarea>
+
+//   <input type="hidden" name="action" value="registration_form">
+//     <div class="submit_group_button">
+//     <input type="submit" id="submit_course_form" value="Submit">
+//   </form>';
+
+
 }
 
 
