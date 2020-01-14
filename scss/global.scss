@@ -157,6 +157,16 @@ iframe {
     textarea {
         margin-top: 5px;
     }
+
+    textarea {
+        height: 178px
+    }
+
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 17px 0;
+    }
 }
 
 div.wpcf7-response-output {
