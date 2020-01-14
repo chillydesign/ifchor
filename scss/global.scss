@@ -159,13 +159,14 @@ iframe {
     }
 
     textarea {
-        height: 178px
+        height: 155px;
     }
 
     input[type="submit"] {
         display: block;
         width: 100%;
         padding: 17px 0;
+        margin-top: 27px;
     }
 }
 
