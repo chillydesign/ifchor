@@ -5,7 +5,7 @@
             <div class="photo_slide_container  photo_slide_size_large">
                     <div class="photo_slide_content">
                         <h1><?php _e( 'Page not found', 'webfactor' ); ?></h1>
-        				<p>
+        				<p style="text-align:center">
         					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'webfactor' ); ?></a>
         				</p>
                     </div>

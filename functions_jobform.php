@@ -117,7 +117,7 @@ function send_jobapplication_emails($data){
 
 
 
-    $headers = 'From: Ifchor HR <rissel.melissa@gmail.com>' . "\r\n";
+    $headers = 'From: Ifchor HR <hr@ifchor.com>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));

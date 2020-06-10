@@ -44,6 +44,16 @@
             <a href="#" class="close_location_box">X</a>
         </div>
 
+        <div class="location_box_japan location_box">
+            <h3>Japan</h3>
+            <p>Tokyo<br />
+
+                <!-- <a href="#">Google Maps</a> -->
+
+            </p>
+            <a href="#" class="close_location_box">X</a>
+        </div>
+
 
         <div class="location_box_usa location_box">
             <h3>New York, USA</h3>
@@ -129,6 +139,15 @@
                       2501 Westburry Tower<br />
                       Business Bay, Dubai - UAE<br />
                        <a target="_blank" href="https://www.google.com/maps/search/2501+Westburry+Tower+Business+Bay,+Dubai+-+UAE/@25.1859372,55.2724433,17z/data=!3m1!4b1">Google Maps</a>
+                    </p>
+
+                    <a href="#" class="close_location_box">X</a>
+                </div>
+
+                <div class="location_box_india location_box">
+                    <h3>India</h3>
+                    <p>
+                      Mumbai
                     </p>
 
                     <a href="#" class="close_location_box">X</a>
