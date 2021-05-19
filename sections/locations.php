@@ -77,7 +77,7 @@
             </p>
             <a href="#" class="close_location_box">X</a>
         </div>
-        <div class="location_box_switzerland location_box">
+        <div class="location_box_switzerland location_box location_box_large">
             <h3>Switzerland</h3>
 
             <div class="row">
