@@ -3,7 +3,7 @@
 <!-- footer -->
 <footer  id="footer" class="footer" role="contentinfo">
 					<div class="container"  style="position:relative;z-index:9999;">
-	<p style="text-align:center; width:100%;"> &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?> | <a href="<?php echo get_home_url(); ?>/wp-content/uploads/2020/06/Terms-and-Conditions.pdf" target="_blank">Terms & Conditions</a> | <a href="<?php echo get_home_url(); ?>/privacy-policy">Privacy Policy</a> | Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a></p>
+	<p style="text-align:center; width:100%;"> &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?> | <a href="<?php echo get_home_url(); ?>/wp-content/uploads/2020/08/Terms-and-Conditions.pdf" target="_blank">Terms & Conditions</a> | <a href="<?php echo get_home_url(); ?>/privacy-policy">Privacy Policy</a> | Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a></p>
 					</div>
 	<div class="footer_background"></div>
 </footer>

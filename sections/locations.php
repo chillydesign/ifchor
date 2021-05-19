@@ -1,4 +1,4 @@
-﻿<div class="container">
+<div class="container">
 
     <div class="locations_map_container">
         <?php include('ifchor-map.svg'); ?>
