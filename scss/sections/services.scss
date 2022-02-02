@@ -13,9 +13,14 @@
     width: 38%;
     max-width: 38%;
     min-width: 38%;
-    padding: 0 40px;
+    padding: 0 40px 35px;
     display: inline-block;
     vertical-align: top;
+
+    @media (min-width: 682px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
 
     @media (min-width: 982px) {
       width: 21%;
