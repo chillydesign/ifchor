@@ -85,7 +85,7 @@ function webfactor_nav() {
 }
 
 function wf_version() {
-    return '19.05.2021';
+    return '02.02.2022';
 }
 
 // Load HTML5 Blank scripts (header.php)

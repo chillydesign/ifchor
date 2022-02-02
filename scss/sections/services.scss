@@ -1,46 +1,55 @@
-.services_container{
+.services_container {
   text-align: center;
   margin: 0 -10px;
-  .service_box {
-      width: 32%;
-      padding: 0 10px;
-      display: inline-block;
-      vertical-align: top;
-      a{
-        display: block;
-        border-bottom: 0;
-        text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-        svg{
-          width: 100%;
-          height: auto;
-          margin-bottom: 20px;
-        }
-      }
-      svg path {
-        transition: 0s fill;
-      }
-      &:hover {
-        svg g#icon path, svg g#icon rect, svg g#icon polygon {
-          fill: $yellow!important;
-          transition-duration:0.3s;
-          transition-timing-function: ease-in-out;
-        }
-        svg g#background path {
-          fill: $primary_color!important;
-          transition-duration:0.3s;
-          transition-timing-function: ease-in-out;
-        }
-      }
+  @media (min-width: 982px) {
+    margin: 0;
   }
-}
 
-@media(min-width:982px){
-  .services_container{
-    margin:0 -45px;
-    .service_box {
-      width: 16%;
-      padding: 0 20px;
+  .service_box {
+    width: 38%;
+    max-width: 38%;
+    min-width: 38%;
+    padding: 0 40px;
+    display: inline-block;
+    vertical-align: top;
+
+    @media (min-width: 982px) {
+      width: 21%;
+      max-width: 21%;
+      min-width: 21%;
+      padding: 0 50px;
+    }
+    a {
+      display: block;
+      border-bottom: 0;
+      text-align: center;
+
+      svg {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+    svg path {
+      transition: 0s fill;
+    }
+    &:hover {
+      svg g#icon path,
+      svg g#icon rect,
+      svg g#icon polygon {
+        fill: $yellow !important;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+      svg g#background path {
+        fill: $primary_color !important;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
     }
   }
 }
