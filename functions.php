@@ -571,8 +571,8 @@ function create_post_type_vacancy() {
             ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-            'has_archive' => true,
-            'exclude_from_search' => false,
+            'has_archive' => false,
+            'exclude_from_search' => true,
             'supports' => array(
                 'title'
             ), // Go to Dashboard Custom HTML5 Blank post for supports
