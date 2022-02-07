@@ -161,7 +161,9 @@
         <div class="location_box_germany location_box">
             <h3>Germany</h3>
             <p>
-
+                GRS.OFFSHORE RENEWABLES <br>
+                Stadthausbruecke 7, <br>
+                20355 Hamburg, Germany
             </p>
 
             <a href="#" class="close_location_box">X</a>
