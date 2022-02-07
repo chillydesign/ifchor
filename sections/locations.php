@@ -163,7 +163,8 @@
             <p>
                 GRS.OFFSHORE RENEWABLES <br>
                 Stadthausbruecke 7, <br>
-                20355 Hamburg, Germany
+                20355 Hamburg, Germany<br />
+                <a target="_blank" href="https://www.google.com/maps/place/GRS.GROUP/@53.5514201,9.9831827,17z/data=!3m2!4b1!5s0x47b18f1a77601829:0x9cb20763bdcbd542!4m5!3m4!1s0x47b18f1bd4e80bc1:0x64f75bfc6bf15bdc!8m2!3d53.5514169!4d9.9853714">Google Maps</a>
             </p>
 
             <a href="#" class="close_location_box">X</a>
