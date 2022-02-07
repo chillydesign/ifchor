@@ -158,6 +158,14 @@
 
             <a href="#" class="close_location_box">X</a>
         </div>
+        <div class="location_box_germany location_box">
+            <h3>Germany</h3>
+            <p>
+
+            </p>
+
+            <a href="#" class="close_location_box">X</a>
+        </div>
 
     </div>
 </div>
