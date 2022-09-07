@@ -179,7 +179,7 @@ function generate_jobapplication_summary(  $data ) {
                 $body .= '<p><strong>' . __($translation, 'webfactor') . '</strong>: <br /> ';
 
                 if (  is_array( $data[$field] )   ) {
-                    $body .=    implode($data[$field], ', ') ;
+                    $body .=    implode( ', ', $data[$field]) ;
                 } else {
                     $body .=   nl2br($data[$field]) ;
                 }
@@ -302,6 +302,3 @@ function jobapplication_add_file_upload($file, $parent){
 //         }
 //     }
 // }
-
-
-?>
